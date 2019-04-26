@@ -1,0 +1,6 @@
+https://github.com/mathnet/mathnet-numerics
+https://github.com/HangfireIO/Cronos
+
+
+Istnieje równie¿ biblioteka Extreme Optimization Numerical Libraries któr¹ mo¿na by zdaje siê u¿yæ do modeli ARMA,
+jest ona jednak¿e p³atna, ale mo¿liwey jest 60 dniowy darmowy trial
