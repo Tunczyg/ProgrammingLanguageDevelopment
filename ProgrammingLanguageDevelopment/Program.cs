@@ -12,8 +12,7 @@ namespace ProgrammingLanguageDevelopment
         {
             var dataProvider = new DataProvider();
             var staticLanguageFeatures = dataProvider.GetLanguageFeaturesStaticData();
-            var parser = new WebParser();
-            var sourceCode = parser.GetDataFromStackOverflow();
+            var stats = dataProvider.GetAnnualStatistics(staticLanguageFeatures);
         }
     }
 }

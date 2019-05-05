@@ -1,4 +1,3 @@
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +10,6 @@ namespace ProgrammingLanguageDevelopment
 {
     class WebParser
     {
-
         public List<ProgrammingLanguage> GetDataFromSecondWebsite()
         {
 
@@ -42,10 +40,10 @@ namespace ProgrammingLanguageDevelopment
             return new List<ProgrammingLanguage>();
         }
 
-        /*
-        //assuming Wojtek would make AnnualStatisticData class or of similiar name
-        public List<AnnualStatisticData> GetDataFromStackOverflow()
+        public List<AnnualStatisticData> GetDataFromStackOverflow(List<ProgrammingLanguage> RequestedLanguages)
         {
+            var statData = new List<AnnualStatisticData>();
+
             for(var year = 2015; year <= DateTime.Today.Year; year++)
             {
                 var html = GetRawSourceCode("https://insights.stackoverflow.com/survey/"+ year + "/");
@@ -87,24 +85,35 @@ namespace ProgrammingLanguageDevelopment
                                     where items.Attributes["class"] != null
                                     && items.Attributes["class"].Value == "bar-row"
                                     select items;
+                    //StringSplitOptions.RemoveEmptyEntries
+                    var nameAndPopularity = languages
+                        .Select(item => item.InnerText
+                        .Split(new char[0], StringSplitOptions.RemoveEmptyEntries)
+                        .Select(capture => capture.ToString())
+                        .ToList())
+                        .Select(i => new List<string>() { i[0], i.FirstOrDefault(e => e.Contains("%"))
+                        .Replace('.', ',').Replace('%',' ') })
+                        .ToList();
 
-                    //following code requires minor changes after creation of AnnualStatisticData
-                    var futureAnnualStatisticDataList = languages.Select(item => item.InnerText.Split(null).Where(part => part != "")).ToList();
+                    var ile = languages
+                        .Select(item => item.InnerText
+                        .Split(new char[0], StringSplitOptions.RemoveEmptyEntries)); 
+                    statData.AddRange(from data in nameAndPopularity
+                                       where RequestedLanguages.Any(language => 
+                                            String.Equals(language.Name,data[0], StringComparison.CurrentCultureIgnoreCase)) 
+                                       select new AnnualStatisticData(data[0], year));
+
+                    foreach(var item in statData)
                     {
-                        //another (more convenient) option:
-                        //following code won't work until AnnualStatisticData creation and 
-                        //addition of [JsonProperty("$property_name")] before its fields
-                        //I want to convert: [JsonProperty("$bar-label")] (language name) and [JsonProperty("$lang-language_name")] 
-
-                        //var languagesHtml = languages.Select(language => language.InnerHtml.ToString()).ToList();
-                        //foreach (var language in languagesHtml)
-                        //JsonConvert.DeserializeObject<AnnualStatisticData>(language);
+                        var lanData = nameAndPopularity.FirstOrDefault(data => 
+                            String.Equals(item.LanguageName, data[0], StringComparison.CurrentCultureIgnoreCase));
+                            Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
+                            item.PopularitySurvey = result;
                     }
                 }
             }
-            return new List<AnnualStatisticData>();
+            return statData;
         }
-        */
 
         string GetRawSourceCode(string urlAddress)
         {

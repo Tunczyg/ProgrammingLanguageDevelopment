@@ -11,9 +11,17 @@ namespace ProgrammingLanguageDevelopment
 {
     class AnnualStatisticData
     {
-        private int year;
-        private float tiobeIndex;
-        private int pullRequestsAmount;
-        private int publicationsAmount;
+        public string LanguageName { get; }
+        public int Year { get; }
+        public double TiobeIndex { get; set; }
+        public double PopularitySurvey { get; set; }
+        public int PullRequestsAmount { get; set; }
+        public int PublicationsAmount { get; set; }
+
+        public AnnualStatisticData(string languageName, int year)
+        {
+            LanguageName = languageName;
+            Year = year;
+        }
     }
 }

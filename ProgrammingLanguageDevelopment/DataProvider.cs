@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ProgrammingLanguageDevelopment
 {
@@ -37,6 +35,14 @@ namespace ProgrammingLanguageDevelopment
         public List<ProgrammingLanguage> GetLanguageFeaturesDynamicData()
         {
             return new List<ProgrammingLanguage>();
+        }
+
+        public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)
+        {
+            var parser = new WebParser();
+            var annualStats = parser.GetDataFromStackOverflow(requestedLanguages);
+            //there annualStats should be filled with more data: publicatons from agh bg, pull requests from github, etc
+            return annualStats;
         }
     }
 }
