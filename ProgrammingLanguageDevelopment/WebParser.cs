@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +11,38 @@ namespace ProgrammingLanguageDevelopment
 {
     class WebParser
     {
+
+        public List<ProgrammingLanguage> GetDataFromSecondWebsite()
+        {
+
+            var html = GetRawSourceCode("https://www.computerscience.org/resources/computer-programming-languages");
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            var inputs = from input in htmlDoc.DocumentNode.Descendants("div")
+                         where input.Attributes["class"] != null && input.Attributes["class"].Value == "entry-content"
+                         select input;
+
+            foreach (var input in inputs)
+            {
+                Console.WriteLine(input.Attributes["class"].Value);
+
+                var languages = from items in input.ChildNodes.Descendants("section")
+                                where items.Attributes["class"] != null
+                                && items.Attributes["class"].Value == "sticky-waypoint"
+                                select items;
+
+                //help dlaczego language jest puste
+                foreach (var language in languages)
+                {
+                    Console.WriteLine(language.Attributes["class"].Value);
+                }
+            }
+
+            return new List<ProgrammingLanguage>();
+        }
+
+        /*
         //assuming Wojtek would make AnnualStatisticData class or of similiar name
         public List<AnnualStatisticData> GetDataFromStackOverflow()
         {
@@ -72,6 +104,7 @@ namespace ProgrammingLanguageDevelopment
             }
             return new List<AnnualStatisticData>();
         }
+        */
 
         string GetRawSourceCode(string urlAddress)
         {
@@ -103,3 +136,4 @@ namespace ProgrammingLanguageDevelopment
         }
     }
 }
+    
