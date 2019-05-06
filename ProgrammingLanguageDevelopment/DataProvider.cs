@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace ProgrammingLanguageDevelopment
 {
@@ -6,6 +6,7 @@ namespace ProgrammingLanguageDevelopment
     {
         public List<ProgrammingLanguage> GetLanguageFeaturesStaticData()
         {
+            /*
             //from most to least popular according to TIOBE (23rd march 2019)
             return new List<ProgrammingLanguage>() {
                 new ProgrammingLanguage("java", 1995, ProgrammingLanguage.Paradigm.Multi_paradigm, ProgrammingLanguage.Typing.Static, ProgrammingLanguage.Level.High),
@@ -29,12 +30,15 @@ namespace ProgrammingLanguageDevelopment
                 new ProgrammingLanguage("objectPascal", 1986, ProgrammingLanguage.Paradigm.Multi_paradigm, ProgrammingLanguage.Typing.Dynamic, ProgrammingLanguage.Level.Low),
                 new ProgrammingLanguage("visualBasic", 1991, ProgrammingLanguage.Paradigm.Object_oriented, ProgrammingLanguage.Typing.Static, ProgrammingLanguage.Level.High),
             };
+            */
+            return new List<ProgrammingLanguage>();
         }
 
-        //todo:
         public List<ProgrammingLanguage> GetLanguageFeaturesDynamicData()
         {
-            return new List<ProgrammingLanguage>();
+            var parser = new WebParser();
+            var langData = parser.GetDataFromSecondWebsite();
+            return langData;
         }
 
         public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)
