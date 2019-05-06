@@ -10,11 +10,11 @@ namespace ProgrammingLanguageDevelopment
     {
         public string Name;
         public int Year;            //first appeared
-        public Paradigm _Paradigm;  //imperative, structured, object-oriented or multi-paradigm 
-        public Typing _Typing;       //typing discipline: static or dynamic
-        public Level _Level;        //high-level or low-level
+        public string _Paradigm;  //imperative, structured, object-oriented or multi-paradigm 
+        public string _Typing;       //typing discipline: static or dynamic
+        public string _Level;        //high-level or low-level
 
-        public enum Paradigm
+       /* public enum Paradigm
         {
             Imperative,
             Structured,
@@ -33,8 +33,9 @@ namespace ProgrammingLanguageDevelopment
             Low,
             High
         }
+        */
 
-        public ProgrammingLanguage(string name, int year, Paradigm paradigm, Typing typing, Level level)
+        public ProgrammingLanguage(string name, int year, string paradigm, string typing, string level)
         {
             Name = name;
             Year = year;
