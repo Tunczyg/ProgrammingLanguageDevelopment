@@ -5,6 +5,7 @@ using System.Net;
 using System.Text;
 using HtmlAgilityPack;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ProgrammingLanguageDevelopment
 {
@@ -12,7 +13,7 @@ namespace ProgrammingLanguageDevelopment
     {
         public List<ProgrammingLanguage> GetDataFromSecondWebsite()
         {
-
+            List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
             var html = GetRawSourceCode("https://www.computerscience.org/resources/computer-programming-languages");
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
@@ -23,21 +24,42 @@ namespace ProgrammingLanguageDevelopment
 
             foreach (var input in inputs)
             {
-                Console.WriteLine(input.Attributes["class"].Value);
-
-                var languages = from items in input.ChildNodes.Descendants("section")
-                                where items.Attributes["class"] != null
-                                && items.Attributes["class"].Value == "sticky-waypoint"
+                var languages = from items in input.Descendants("section")
+                                where items.Attributes["class"] != null && items.Attributes["class"].Value == "page-section sticky-waypoint"
+                                && items.Attributes["id"] != null && items.Attributes["id"].Value != "what-are-computer-programming-languages"
                                 select items;
 
-                //help dlaczego language jest puste
                 foreach (var language in languages)
                 {
-                    Console.WriteLine(language.Attributes["class"].Value);
+                    var names = from lang in language.Descendants("h2")
+                                where lang.Attributes["class"] != null && lang.Attributes["class"].Value == "section-title"
+                                select lang;
+                    
+                    var name = names.Last().InnerText;
+
+                    int year = 0; var paradigm = "";
+                    var typing = ""; var level = "";
+
+                    Regex rgx = new Regex(@"\d{4}");
+                    MatchCollection matches = rgx.Matches(language.InnerText);
+                    if (matches.Count > 0) year = int.Parse(matches.Last().Value);
+
+                    Regex rgx2 = new Regex(@"object-oriented|imperative|structure|multi-paradigm");
+                    MatchCollection matches2 = rgx2.Matches(language.InnerText);
+                    if (matches2.Count > 0) paradigm = matches2.Last().Value.ToLower();
+
+                    Regex rgx3 = new Regex(@"static|dynamic");
+                    MatchCollection matches3 = rgx3.Matches(language.InnerText);
+                    if (matches3.Count > 0) typing = matches3.Last().Value.ToLower();
+
+                    Regex rgx4 = new Regex(@"low|high");
+                    MatchCollection matches4 = rgx4.Matches(language.InnerText);
+                    if (matches4.Count > 0) level = matches4.Last().Value.ToLower();
+
+                    list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
                 }
             }
-
-            return new List<ProgrammingLanguage>();
+            return list;
         }
 
         public List<AnnualStatisticData> GetDataFromStackOverflow(List<ProgrammingLanguage> RequestedLanguages)
