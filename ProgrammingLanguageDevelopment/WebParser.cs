@@ -62,6 +62,54 @@ namespace ProgrammingLanguageDevelopment
             return list;
         }
 
+        public List<ProgrammingLanguage> GetDataFromAdminsChoice()
+        {
+            List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
+            var html = GetRawSourceCode("https://www.adminschoice.com/top-10-most-popular-programming-languages");
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            var inputs = from input in htmlDoc.DocumentNode.Descendants("div")
+                         where input.Attributes["class"] != null && input.Attributes["class"].Value == "entry clearfix"
+                         select input;
+
+            foreach (var input in inputs)
+            {
+                var languages = from items in input.Descendants("h2")
+                                select items;
+
+                foreach (var language in languages)
+                {
+                    var names = from lang in input.Descendants("h2")
+                                select lang;
+                    
+                    var name = names.Last().InnerText;
+
+                    int year = 0; var paradigm = "";
+                    var typing = ""; var level = "";
+
+                    Regex rgx = new Regex(@"\d{4}");
+                    MatchCollection matches = rgx.Matches(language.InnerText);
+                    if (matches.Count > 0) year = int.Parse(matches.Last().Value);
+
+                    Regex rgx2 = new Regex(@"object-oriented|imperative|structure|multi-paradigm");
+                    MatchCollection matches2 = rgx2.Matches(language.InnerText);
+                    if (matches2.Count > 0) paradigm = matches2.Last().Value.ToLower();
+
+                    Regex rgx3 = new Regex(@"static|dynamic");
+                    MatchCollection matches3 = rgx3.Matches(language.InnerText);
+                    if (matches3.Count > 0) typing = matches3.Last().Value.ToLower();
+
+                    Regex rgx4 = new Regex(@"low|high");
+                    MatchCollection matches4 = rgx4.Matches(language.InnerText);
+                    if (matches4.Count > 0) level = matches4.Last().Value.ToLower();
+
+                    list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
+                }
+            }
+            return list;
+        }
+
         public List<AnnualStatisticData> GetDataFromStackOverflowWeb(List<ProgrammingLanguage> RequestedLanguages)
         {
             var statData = new List<AnnualStatisticData>();
