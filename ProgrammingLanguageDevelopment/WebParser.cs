@@ -4,9 +4,10 @@ using System.IO;
 using System.Net;
 using System.Text;
 using HtmlAgilityPack;
-using System.Json;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 namespace ProgrammingLanguageDevelopment
 {
@@ -162,11 +163,20 @@ namespace ProgrammingLanguageDevelopment
                 // Open the stream using a StreamReader for easy access.  
                 StreamReader reader = new StreamReader(dataStream);
                 // Read the content.  
-                string responseFromServer = reader.ReadToEnd();
-                //var details = JObject.Parse(responseFromServer);
+                
+                var responseFromServer = reader.ReadToEnd().Replace("}\n{", "},\n{").Replace("}\r\n{", "},\n{");
+                var jsonResponseFormat = "{\"items\": [\n" + responseFromServer + "\n]}";
+                var jsons = JObject.Parse(jsonResponseFormat).SelectToken("items");
+
+                foreach (var item in jsons)
+                {
+                    //example of usage - not a proper one in our situation
+                    var record = new AnnualStatisticData(item.SelectToken("name").ToString(), Int32.Parse(item.SelectToken("year").ToString()));
+                    record.PullRequestsAmount = Int32.Parse(item.SelectToken("count").ToString());
+                }
 
                 // TODO: NAPISAÆ OBRÓBKÊ OTRZYMYWANYCH DANYCH
-                // 1) Parsowanie Jsona do stringów
+                // 1) Parsowanie Jsona do stringów : ok
                 // 2) Sprawdzenie czy chcemy info o danym jêzyku
                 // 3) Sprawdzenie czy dany jezyk+rok wystepuje juz na liscie
                 // 4) Dodanie wpisu jezyk+rok+count/dodanie wartosci count do wpisu
