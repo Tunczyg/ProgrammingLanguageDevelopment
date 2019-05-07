@@ -109,6 +109,62 @@ namespace ProgrammingLanguageDevelopment
             }
             return list;
         }
+                public List<ProgrammingLanguage> GetDataFromWikipedia()
+        {
+            List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
+            var html = GetRawSourceCode("https://en.wikipedia.org/wiki/List_of_programming_languages?fbclid=IwAR07gQRfjtQ9f-Qe6_n_aOn4N7cJq1ds_UbfMMKZJhTZBeDMUwSoD1tdlzA");
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            var inputs = from input in htmlDoc.DocumentNode.Descendants("li")
+                         where input.Attributes["href"] != null
+                         select input;
+
+            foreach (var input in inputs)
+            {
+                
+                var languages = from items in input.Descendants("li")
+                                where items.Attributes["title"] != null
+                                select items;
+
+                var html2 = GetRawSourceCode("https://en.wikipedia.org"+input); 
+                var htmlDoc2 = new HtmlDocument();
+                htmlDoc2.LoadHtml(html2);
+            
+                foreach (var language in languages)
+                {
+                
+                    var names = from lang in language.Descendants("h2")
+                                where lang.Attributes["class"] != null && lang.Attributes["class"].Value == "section-title"
+                                select lang;
+                    
+                    var name = names.Last().InnerText;
+
+                    int year = 0; var paradigm = "";
+                    var typing = ""; var level = "";
+
+                    Regex rgx = new Regex(@"\d{4}");
+                    MatchCollection matches = rgx.Matches(language.InnerText);
+                    if (matches.Count > 0) year = int.Parse(matches.Last().Value);
+
+                    Regex rgx2 = new Regex(@"object-oriented|imperative|structure|multi-paradigm");
+                    MatchCollection matches2 = rgx2.Matches(language.InnerText);
+                    if (matches2.Count > 0) paradigm = matches2.Last().Value.ToLower();
+
+                    Regex rgx3 = new Regex(@"static|dynamic");
+                    MatchCollection matches3 = rgx3.Matches(language.InnerText);
+                    if (matches3.Count > 0) typing = matches3.Last().Value.ToLower();
+
+                    Regex rgx4 = new Regex(@"low|high");
+                    MatchCollection matches4 = rgx4.Matches(language.InnerText);
+                    if (matches4.Count > 0) level = matches4.Last().Value.ToLower();
+
+                    list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
+                }
+            }
+            return list;
+        }
+
 
         public List<AnnualStatisticData> GetDataFromStackOverflowWeb(List<ProgrammingLanguage> RequestedLanguages)
         {
