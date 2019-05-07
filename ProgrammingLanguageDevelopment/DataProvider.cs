@@ -6,7 +6,6 @@ namespace ProgrammingLanguageDevelopment
     {
         public List<ProgrammingLanguage> GetLanguageFeaturesStaticData()
         {
-            /*
             //from most to least popular according to TIOBE (23rd march 2019)
             return new List<ProgrammingLanguage>() {
                 new ProgrammingLanguage("java", 1995, ProgrammingLanguage.Paradigm.Multi_paradigm, ProgrammingLanguage.Typing.Static, ProgrammingLanguage.Level.High),
@@ -30,21 +29,19 @@ namespace ProgrammingLanguageDevelopment
                 new ProgrammingLanguage("objectPascal", 1986, ProgrammingLanguage.Paradigm.Multi_paradigm, ProgrammingLanguage.Typing.Dynamic, ProgrammingLanguage.Level.Low),
                 new ProgrammingLanguage("visualBasic", 1991, ProgrammingLanguage.Paradigm.Object_oriented, ProgrammingLanguage.Typing.Static, ProgrammingLanguage.Level.High),
             };
-            */
-            return new List<ProgrammingLanguage>();
         }
 
         public List<ProgrammingLanguage> GetLanguageFeaturesDynamicData()
         {
             var parser = new WebParser();
-            var langData = parser.GetDataFromSecondWebsite();
+            var langData = parser.GetDataFromComputerScienceWeb();
             return langData;
         }
 
         public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)
         {
             var parser = new WebParser();
-            var annualStats = parser.GetDataFromStackOverflow(requestedLanguages);
+            var annualStats = parser.GetDataFromStackOverflowWeb(requestedLanguages);
             //there annualStats should be filled with more data: publicatons from agh bg, pull requests from github, etc
             return annualStats;
         }

@@ -11,7 +11,7 @@ namespace ProgrammingLanguageDevelopment
         static void Main(string[] args)
         {
             var dataProvider = new DataProvider();
-            var staticLanguageFeatures = dataProvider.GetLanguageFeaturesStaticData();
+            var staticLanguageFeatures = dataProvider.GetLanguageFeaturesDynamicData();
             var stats = dataProvider.GetAnnualStatistics(staticLanguageFeatures);
         }
     }

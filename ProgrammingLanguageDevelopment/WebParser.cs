@@ -11,7 +11,7 @@ namespace ProgrammingLanguageDevelopment
 {
     class WebParser
     {
-        public List<ProgrammingLanguage> GetDataFromSecondWebsite()
+        public List<ProgrammingLanguage> GetDataFromComputerScienceWeb()
         {
             List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
             var html = GetRawSourceCode("https://www.computerscience.org/resources/computer-programming-languages");
@@ -62,7 +62,7 @@ namespace ProgrammingLanguageDevelopment
             return list;
         }
 
-        public List<AnnualStatisticData> GetDataFromStackOverflow(List<ProgrammingLanguage> RequestedLanguages)
+        public List<AnnualStatisticData> GetDataFromStackOverflowWeb(List<ProgrammingLanguage> RequestedLanguages)
         {
             var statData = new List<AnnualStatisticData>();
 
