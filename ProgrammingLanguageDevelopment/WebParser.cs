@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 using HtmlAgilityPack;
+using System.Json;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -132,8 +133,52 @@ namespace ProgrammingLanguageDevelopment
                             Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
                             item.PopularitySurvey = result;
                     }
+                    
                 }
+                
             }
+            return statData;
+        }
+
+        public List<AnnualStatisticData> GetDataFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages)
+        {
+            var statData = new List<AnnualStatisticData>();
+
+            // Create a request for the URL.   
+            WebRequest request = WebRequest.Create(
+              "https://madnight.github.io/githut/gh-pull-request_56d080.json");
+            // If required by the server, set the credentials.  
+            request.Credentials = CredentialCache.DefaultCredentials;
+
+            // Get the response.  
+            WebResponse response = request.GetResponse();
+            // Display the status.  
+            //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+
+            // Get the stream containing content returned by the server. 
+            // The using block ensures the stream is automatically closed. 
+            using (Stream dataStream = response.GetResponseStream())
+            {
+                // Open the stream using a StreamReader for easy access.  
+                StreamReader reader = new StreamReader(dataStream);
+                // Read the content.  
+                string responseFromServer = reader.ReadToEnd();
+                //var details = JObject.Parse(responseFromServer);
+
+                // TODO: NAPISAÆ OBRÓBKÊ OTRZYMYWANYCH DANYCH
+                // 1) Parsowanie Jsona do stringów
+                // 2) Sprawdzenie czy chcemy info o danym jêzyku
+                // 3) Sprawdzenie czy dany jezyk+rok wystepuje juz na liscie
+                // 4) Dodanie wpisu jezyk+rok+count/dodanie wartosci count do wpisu
+                // 5) Zwrocenie listy
+
+                // Display the content.  
+                Console.WriteLine(responseFromServer);
+            }
+
+            // Close the response.  
+            response.Close();
+
             return statData;
         }
 
