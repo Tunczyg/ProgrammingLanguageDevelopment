@@ -109,58 +109,60 @@ namespace ProgrammingLanguageDevelopment
             }
             return list;
         }
-                public List<ProgrammingLanguage> GetDataFromWikipedia()
+
+        public List<ProgrammingLanguage> GetDataFromWikipedia()
         {
-            List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
+            var list = new List<ProgrammingLanguage>();
             var html = GetRawSourceCode("https://en.wikipedia.org/wiki/List_of_programming_languages?fbclid=IwAR07gQRfjtQ9f-Qe6_n_aOn4N7cJq1ds_UbfMMKZJhTZBeDMUwSoD1tdlzA");
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
 
-            var inputs = from input in htmlDoc.DocumentNode.Descendants("li")
-                         where input.Attributes["href"] != null
-                         select input;
-
-            foreach (var input in inputs)
+            var divs = from items in htmlDoc.DocumentNode.Descendants("div")
+                          where items.Attributes["class"] != null
+                          && items.Attributes["class"]
+                          .Value == "div-col columns column-width"
+                          select items;
+            foreach(var div in divs)
             {
+                var uls = from ul in div.Descendants("ul")
+                          select ul;
                 
-                var languages = from items in input.Descendants("li")
-                                where items.Attributes["title"] != null
-                                select items;
-
-                var html2 = GetRawSourceCode("https://en.wikipedia.org"+input); 
-                var htmlDoc2 = new HtmlDocument();
-                htmlDoc2.LoadHtml(html2);
-            
-                foreach (var language in languages)
+                foreach(var ul in uls)
                 {
-                
-                    var names = from lang in language.Descendants("h2")
-                                where lang.Attributes["class"] != null && lang.Attributes["class"].Value == "section-title"
-                                select lang;
-                    
-                    var name = names.Last().InnerText;
+                    var lis = from li in ul.Descendants("li")
+                                 select li;
 
-                    int year = 0; var paradigm = "";
-                    var typing = ""; var level = "";
+                    foreach (var li in lis)
+                    {
 
-                    Regex rgx = new Regex(@"\d{4}");
-                    MatchCollection matches = rgx.Matches(language.InnerText);
-                    if (matches.Count > 0) year = int.Parse(matches.Last().Value);
+                        var urls = from a in li.Descendants("a")
+                                        where a.Attributes["href"] != null
+                                        select a.Attributes["href"].Value;
 
-                    Regex rgx2 = new Regex(@"object-oriented|imperative|structure|multi-paradigm");
-                    MatchCollection matches2 = rgx2.Matches(language.InnerText);
-                    if (matches2.Count > 0) paradigm = matches2.Last().Value.ToLower();
+                        foreach(var url in urls)
+                        {
+                            var html2 = GetRawSourceCode("https://en.wikipedia.org" + url);
+                            //skip empty entries
+                            if (String.IsNullOrEmpty(html2))
+                                continue;
 
-                    Regex rgx3 = new Regex(@"static|dynamic");
-                    MatchCollection matches3 = rgx3.Matches(language.InnerText);
-                    if (matches3.Count > 0) typing = matches3.Last().Value.ToLower();
+                            var htmlDoc2 = new HtmlDocument();
+                            htmlDoc2.LoadHtml(html2);
 
-                    Regex rgx4 = new Regex(@"low|high");
-                    MatchCollection matches4 = rgx4.Matches(language.InnerText);
-                    if (matches4.Count > 0) level = matches4.Last().Value.ToLower();
+                            //extracts the Wikipedia table from the righ column
+                            var tables = from table in htmlDoc2.DocumentNode.Descendants("table")
+                                         where table.Attributes["class"] != null
+                                         && table.Attributes["class"].Value == "infobox vevent"
+                                         select table;
 
-                    list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
-                }
+                            //now: ensure that the table contains at least two interesting values (e.g. year, paradigm)
+                            //otherwise - skip it and continue
+                            //if it has sufficient data: create new instance of ProgrammingLanguage
+                            //fill that instance with data
+                            //add this instance to list
+                        }                        
+                    }
+                }                
             }
             return list;
         }
@@ -244,29 +246,35 @@ namespace ProgrammingLanguageDevelopment
         string GetRawSourceCode(string urlAddress)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlAddress);
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-            if (response.StatusCode == HttpStatusCode.OK)
+            try
             {
-                Stream receiveStream = response.GetResponseStream();
-                StreamReader readStream = null;
-
-                if (response.CharacterSet == null)
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    readStream = new StreamReader(receiveStream);
+                    Stream receiveStream = response.GetResponseStream();
+                    StreamReader readStream = null;
+
+                    if (response.CharacterSet == null)
+                    {
+                        readStream = new StreamReader(receiveStream);
+                    }
+                    else
+                    {
+                        readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
+                    }
+
+                    string data = readStream.ReadToEnd();
+
+                    response.Close();
+                    readStream.Close();
+
+                    return data;
                 }
-                else
-                {
-                    readStream = new StreamReader(receiveStream, Encoding.GetEncoding(response.CharacterSet));
-                }
-
-                string data = readStream.ReadToEnd();
-
-                response.Close();
-                readStream.Close();
-
-                return data;
             }
+            catch (Exception ex)
+            {
+            }
+
             return new string("");
         }
     }
