@@ -152,14 +152,58 @@ namespace ProgrammingLanguageDevelopment
                             //extracts the Wikipedia table from the righ column
                             var tables = from table in htmlDoc2.DocumentNode.Descendants("table")
                                          where table.Attributes["class"] != null
-                                         && table.Attributes["class"].Value == "infobox vevent"
+                                         && table.Attributes["class"].Value == "infobox vet"
                                          select table;
 
-                            //now: ensure that the table contains at least two interesting values (e.g. year, paradigm)
-                            //otherwise - skip it and continue
-                            //if it has sufficient data: create new instance of ProgrammingLanguage
-                            //fill that instance with data
-                            //add this instance to list
+                            //now: ensure that the table contains at least two interesting values (e.g. year, paradigm)+
+                            //otherwise - skip it and continue+
+                            //if it has sufficient data: create new instance of ProgrammingLanguage+
+                            //fill that instance with data+
+                            //add this instance to list+
+                            var names = from name in table.Descendants("caption")
+                                        where name.Attributes["class"] != null
+                                        && name.Attributes["class"].Value == "summary"
+                                        select name;
+
+                            var name = name.Last().InnerText;
+
+                            int year = 0; var paradigm = "";
+                            var typing = ""; var level = "";
+                            var dataCounter=0;
+
+                            Regex rgx = new Regex(@"\d{4}");
+                            MatchCollection matches = rgx.Matches(table.InnerText);
+                            if (matches.Count > 0) {
+                                year = int.Parse(matches.FirstOrDefault());
+                                dataCounter++;
+                            }
+                           
+                            Regex rgx2 = new Regex(@"object-oriented|imperative|structure|structured|multi-paradigm|procedural|functional|Imperative");
+                            MatchCollection matches2 = rgx2.Matches(table.InnerText);
+                            if (matches2.Count > 0) {
+                                paradigm = matches2.FirstOrDefault().Value.ToLower();
+                                dataCounter++;
+                            }
+
+                            Regex rgx3 = new Regex(@"static|dynamic|Static|Dynamic");
+                            MatchCollection matches3 = rgx3.Matches(table.InnerText);
+                            if (matches3.Count > 0) {
+                                typing = matches3.Last().Value.ToLower();
+                                dataCounter++;
+                            }
+
+                            Regex rgx4 = new Regex(@"low|high|high-level|low-level");
+                            MatchCollection matches4 = rgx4.Matches(table.InnerText);
+                            if (matches4.Count > 0) {
+                                level = matches4.Last().Value.ToLower();
+                                dataCounter++;
+                            }
+
+                            if(dataCounter<2)
+                                continue;
+
+
+                            list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
                         }                        
                     }
                 }                
