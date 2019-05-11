@@ -122,91 +122,49 @@ namespace ProgrammingLanguageDevelopment
                           && items.Attributes["class"]
                           .Value == "div-col columns column-width"
                           select items;
-            foreach(var div in divs)
+
+            var infoTables = new List<HtmlNode>();
+            foreach (var div in divs)
             {
-                var uls = from ul in div.Descendants("ul")
-                          select ul;
-                
-                foreach(var ul in uls)
+                var urls = from a in div.Descendants("a")
+                           where a.Attributes["href"] != null
+                           select a.Attributes["href"].Value;
+                foreach (var url in urls)
                 {
-                    var lis = from li in ul.Descendants("li")
-                                 select li;
+                    var html2 = GetRawSourceCode("https://en.wikipedia.org" + url);
+                    //skip empty entries
+                    if (String.IsNullOrEmpty(html2))
+                        continue;
 
-                    foreach (var li in lis)
-                    {
+                    var htmlDoc2 = new HtmlDocument();
+                    htmlDoc2.LoadHtml(html2);
 
-                        var urls = from a in li.Descendants("a")
-                                        where a.Attributes["href"] != null
-                                        select a.Attributes["href"].Value;
+                    //extracts the Wikipedia table from the righ column
+                    infoTables.AddRange(from table in htmlDoc2.DocumentNode.Descendants("table")
+                                        where table.Attributes["class"] != null
+                                        && table.Attributes["class"].Value.Contains("infobox")
+                                        select table);
+                }
+            }              
+            
+            foreach(var table in infoTables)
+            {
+                var name = ""; //to extract
 
-                        foreach(var url in urls)
-                        {
-                            var html2 = GetRawSourceCode("https://en.wikipedia.org" + url);
-                            //skip empty entries
-                            if (String.IsNullOrEmpty(html2))
-                                continue;
+                var rgx = new Regex(@"(?<=First&#160;appeared</th><td>)(.*?)(?=<)");
+                var year = rgx.Matches(table.InnerHtml).FirstOrDefault();
+                int int_year = 0;
+                if(year != null) Int32.TryParse(year.ToString(), out int_year);
 
-                            var htmlDoc2 = new HtmlDocument();
-                            htmlDoc2.LoadHtml(html2);
+                rgx = new Regex(@"(?<=Typing discipline</a></th><td>)(.*?)(?=</td>)");
+                var typing = rgx.Matches(table.InnerHtml).FirstOrDefault(); //needs further extraction and conversion to Enum, enlarge ProgramminLanguage Enum sets if needed (for sure needed)
 
-                            //extracts the Wikipedia table from the righ column
-                            var tables = from table in htmlDoc2.DocumentNode.Descendants("table")
-                                         where table.Attributes["class"] != null
-                                         && table.Attributes["class"].Value == "infobox vet"
-                                         select table;
+                rgx = new Regex(@"(?<=Paradigm</a></th>)(.*?)(?=</td>)");
+                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault(); //the same story as typing
 
-                            //now: ensure that the table contains at least two interesting values (e.g. year, paradigm)+
-                            //otherwise - skip it and continue+
-                            //if it has sufficient data: create new instance of ProgrammingLanguage+
-                            //fill that instance with data+
-                            //add this instance to list+
-                            var names = from name in table.Descendants("caption")
-                                        where name.Attributes["class"] != null
-                                        && name.Attributes["class"].Value == "summary"
-                                        select name;
-
-                            var name = name.Last().InnerText;
-
-                            int year = 0; var paradigm = "";
-                            var typing = ""; var level = "";
-                            var dataCounter=0;
-
-                            Regex rgx = new Regex(@"\d{4}");
-                            MatchCollection matches = rgx.Matches(table.InnerText);
-                            if (matches.Count > 0) {
-                                year = int.Parse(matches.FirstOrDefault());
-                                dataCounter++;
-                            }
-                           
-                            Regex rgx2 = new Regex(@"object-oriented|imperative|structure|structured|multi-paradigm|procedural|functional|Imperative");
-                            MatchCollection matches2 = rgx2.Matches(table.InnerText);
-                            if (matches2.Count > 0) {
-                                paradigm = matches2.FirstOrDefault().Value.ToLower();
-                                dataCounter++;
-                            }
-
-                            Regex rgx3 = new Regex(@"static|dynamic|Static|Dynamic");
-                            MatchCollection matches3 = rgx3.Matches(table.InnerText);
-                            if (matches3.Count > 0) {
-                                typing = matches3.Last().Value.ToLower();
-                                dataCounter++;
-                            }
-
-                            Regex rgx4 = new Regex(@"low|high|high-level|low-level");
-                            MatchCollection matches4 = rgx4.Matches(table.InnerText);
-                            if (matches4.Count > 0) {
-                                level = matches4.Last().Value.ToLower();
-                                dataCounter++;
-                            }
-
-                            if(dataCounter<2)
-                                continue;
-
-
-                            list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
-                        }                        
-                    }
-                }                
+                var oper_sys = ""; //to extract
+                //usually no info about level - leave blank or find an indirect way of extraction
+                list.Add(new ProgrammingLanguage(name, int_year, new ProgrammingLanguage.Paradigm(), new ProgrammingLanguage.Typing(), new ProgrammingLanguage.Level(), new ProgrammingLanguage.OperatingSystem()));
             }
             return list;
         }
