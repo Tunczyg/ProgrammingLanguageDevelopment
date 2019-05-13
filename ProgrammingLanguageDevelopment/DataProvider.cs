@@ -45,5 +45,12 @@ namespace ProgrammingLanguageDevelopment
             //there annualStats should be filled with more data: publicatons from agh bg, pull requests from github, etc
             return annualStats;
         }
+        
+        public List<AnnualStatisticData> GetAnnualStatisticsFromBG()
+        {
+            var parser = new WebParser();
+            var AnnualStatsFromBG = parser.GetDataFromBG();
+            return AnnualStatsFromBG;
+        }
     }
 }
