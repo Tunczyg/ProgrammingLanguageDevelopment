@@ -114,6 +114,59 @@ namespace ProgrammingLanguageDevelopment
             }
             return statData;
         }
+        
+            public List<AnnualStatisticData> GetDataFromBG()
+            {
+            var data_list = new List<AnnualStatisticData>();
+
+
+            int amount_of_books;
+            string[] tab_of_languages = new string[] {"java","python","c","c%2B%2B","visualBasicNET","c%23","javaScript","php","sql","objectiveC","matlab","assembly","perl","ruby","groovy","swift","go","objectPascal","visualBasic"};
+
+            for(int i=0; i < 19; i++)
+            {   
+                var name_to_obj = tab_of_languages[i];
+
+            for(var year = 2015; year <= DateTime.Today.Year; year++)
+            {
+            var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1="+ tab_of_languages[i] +"&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");
+            var htmlDoc = new HtmlDocument();
+            htmlDoc.LoadHtml(html);
+
+            var year_to_obj = year;
+
+            var checks = from check in htmlDoc.DocumentNode.Descendants("ul")
+                         where check.Attributes["class"] != null && check.Attributes["class"].Value == "page-messages"
+                         select check;
+
+            if(!checks.Any())
+            {
+
+                 var inputs = from input in htmlDoc.DocumentNode.Descendants("div")
+                 where input.Attributes["class"] != null && input.Attributes["class"].Value == "resultCount"
+                 select input;
+                    if (inputs.Any())
+                    {
+                     string s1 = (inputs.Last().InnerText);
+                     amount_of_books = Int32.Parse(s1.Remove(0,23).Trim().Trim( new Char[] { '.' } ));
+                    }
+                    else amount_of_books = 0;
+            }
+            else amount_of_books = 0;
+
+            AnnualStatisticData obj = new AnnualStatisticData(name_to_obj, year_to_obj); 
+            data_list.Add(obj);
+            obj.PublicationsAmount = amount_of_books;
+
+            /* foreach (AnnualStatisticData obj in data_list)
+            {
+                 Console.WriteLine("Year: " + obj.Year +
+                 "\nLanguage: " + obj.LanguageName +
+                 "\nPublicationsAmount: " + obj.PublicationsAmount);
+            }*/
+
+            return data_list;
+        }
 
         string GetRawSourceCode(string urlAddress)
         {
