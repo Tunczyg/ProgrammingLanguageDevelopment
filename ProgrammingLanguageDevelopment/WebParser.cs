@@ -147,15 +147,15 @@ namespace ProgrammingLanguageDevelopment
                 }
             }              
             
-            foreach(var table in infoTables)
+           foreach(var table in infoTables)
             {
-                var name = ""; //to extract
+                var name="";
 
                 var names = from caption in table.Descendants("caption")
                             where caption.Attributes["class"] != null && caption.Attributes["class"].Value == "summary"
                             select caption;
                 
-                name=names.Last().InnerText;
+                if (names.Last().InnerText!=null) name=names.Last().InnerText;
 
                 var rgx = new Regex(@"(?<=First&#160;appeared</th><td>)(.*?)(?=<)");
                 var year = rgx.Matches(table.InnerHtml).FirstOrDefault();
@@ -168,11 +168,14 @@ namespace ProgrammingLanguageDevelopment
                 rgx = new Regex(@"(?<=Paradigm</a></th>)(.*?)(?=</td>)");
                 var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault(); //the same story as typing
 
-                var oper_sys = ""; //to extract
+                rgx = new Regex(@"(?<=OS</a></th><td>)(.*?)(?=</td>)");
+                var oper_sys = rgx.Matches(table.InnerHtml).FirstOrDefault();
+
+                
                 //usually no info about level - leave blank or find an indirect way of extraction
 
                 Console.WriteLine("\t Name: " + name +
-                "\t Year: " + int_year +
+                "\t Int_Year: " + int_year +
                 "\t Typing: " + typing +
                 "\t Paradigm: " + paradigm+
                 "\t Oper_sys: " + oper_sys);
