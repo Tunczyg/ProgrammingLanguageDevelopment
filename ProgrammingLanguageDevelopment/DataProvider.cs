@@ -37,6 +37,12 @@ namespace ProgrammingLanguageDevelopment
             var langData = parser.GetDataFromComputerScienceWeb();
             return langData;
         }
+        public List<ProgrammingLanguage> GetLanguageFeaturesFromWikipedia()
+        {
+            var parser = new WebParser();
+            var langData = parser.GetDataFromWikipedia();
+            return langData;
+        }
 
         public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)
         {

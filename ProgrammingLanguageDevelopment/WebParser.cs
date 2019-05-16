@@ -151,6 +151,12 @@ namespace ProgrammingLanguageDevelopment
             {
                 var name = ""; //to extract
 
+                var names = from caption in table.Descendants("caption")
+                            where caption.Attributes["class"] != null && caption.Attributes["class"].Value == "summary"
+                            select caption;
+                
+                name=names.Last().InnerText;
+
                 var rgx = new Regex(@"(?<=First&#160;appeared</th><td>)(.*?)(?=<)");
                 var year = rgx.Matches(table.InnerHtml).FirstOrDefault();
                 int int_year = 0;
@@ -164,6 +170,12 @@ namespace ProgrammingLanguageDevelopment
 
                 var oper_sys = ""; //to extract
                 //usually no info about level - leave blank or find an indirect way of extraction
+
+                Console.WriteLine("\t Name: " + name +
+                "\t Year: " + int_year +
+                "\t Typing: " + typing +
+                "\t Paradigm: " + paradigm+
+                "\t Oper_sys: " + oper_sys);
                 list.Add(new ProgrammingLanguage(name, int_year, new ProgrammingLanguage.Paradigm(), new ProgrammingLanguage.Typing(), new ProgrammingLanguage.Level(), new ProgrammingLanguage.OperatingSystem()));
             }
             return list;
