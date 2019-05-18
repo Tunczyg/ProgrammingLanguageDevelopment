@@ -259,21 +259,25 @@ namespace ProgrammingLanguageDevelopment
             return statData;
         }
 
-        public List<AnnualStatisticData> GetDataFromBG()
+        public List<AnnualStatisticData> GetDataFromBG(List<ProgrammingLanguage> RequestedLanguages)
         {
             var data_list = new List<AnnualStatisticData>();
-
-
             int amount_of_books;
-            string[] tab_of_languages = new string[] { "java", "python", "c", "c%2B%2B", "visualBasicNET", "c%23", "javaScript", "php", "sql", "objectiveC", "matlab", "assembly", "perl", "ruby", "groovy", "swift", "go", "objectPascal", "visualBasic" };
-
-            for (int i = 0; i < 19; i++)
+            
+            for (int i = 0; i < RequestedLanguages.Count; i++)
             {
-                var name_to_obj = tab_of_languages[i];
+                var name_of_language = RequestedLanguages[i].Name;
+
+                if(name_of_language == "c++")
+                    name_of_language = "c%2B%2B";
+
+                if(name_of_language == "c#")
+                    name_of_language = "c%23";
+          
 
                 for (var year = 2015; year <= DateTime.Today.Year; year++)
                 {
-                    var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1=" + tab_of_languages[i] + "&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");
+                    var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1=" + name_of_language + "&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");
                     var htmlDoc = new HtmlDocument();
                     htmlDoc.LoadHtml(html);
 
@@ -298,7 +302,7 @@ namespace ProgrammingLanguageDevelopment
                     }
                     else amount_of_books = 0;
 
-                    AnnualStatisticData obj = new AnnualStatisticData(name_to_obj, year_to_obj);
+                    AnnualStatisticData obj = new AnnualStatisticData(name_of_language, year_to_obj);
                     data_list.Add(obj);
                     obj.PublicationsAmount = amount_of_books;
 
