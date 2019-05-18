@@ -190,38 +190,34 @@ namespace ProgrammingLanguageDevelopment
                     RequestedLanguages.Any(language => 
                     string.Equals(language.Name, record.LanguageName, StringComparison.CurrentCultureIgnoreCase)))
                     .ToList();
-                //extract partially completed stats
-                var statsToBeFilled = requestedStats.Where(record => ExistingStats.Any(item =>
+                //extract stats consistent with existing stats
+                var existingStatsDuplicates = requestedStats.Where(record => ExistingStats.Any(item =>
                     string.Equals(item.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
                     item.Year == record.Year))
                     .ToList();
-                //complete those stats:
-                foreach(var stat in statsToBeFilled)
+                //and those non consistent
+                var existingStatsNonDuplicates = ExistingStats.Where(record =>
+                    existingStatsDuplicates.Any(item =>
+                    item == record)).ToList();
+
+                //complete duplicated stats
+                foreach (var stat in existingStatsDuplicates)
                 {
                     var missingData = ExistingStats.FirstOrDefault(record => 
                     string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
                     stat.Year == record.Year);
                     stat.PopularitySurvey = missingData.PopularitySurvey;
                 }
+                //records from GH only:
+                var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
+
                 //add to the returned result
-                statData.AddRange(statsToBeFilled);
-
-                var newRecOnly = requestedStats.Where(stat1 => !statsToBeFilled.Any(stat2 => stat1 == stat2));
-
-                // TODO: NAPISAÆ OBRÓBKÊ OTRZYMYWANYCH DANYCH
-                // 1) Parsowanie Jsona do stringów : ok
-                // 2) Sprawdzenie czy chcemy info o danym jêzyku: ok
-                // 3) Sprawdzenie czy dany jezyk+rok wystepuje juz na liscie i uzupelnienie ok
-                // 4) Jeœli nie wystêpuje to stworzenie nowego rekordu
-                // 5) Scalenie wyników z 3 i 4 i zwrocenie listy
-
-                // Display the content.  
-                Console.WriteLine(responseFromServer);
+                statData.AddRange(existingStatsDuplicates);
+                statData.AddRange(existingStatsNonDuplicates);
+                statData.AddRange(ghOnly);
             }
-
             // Close the response.  
-            response.Close();
-            
+            response.Close();            
             return statData;
         }
 
