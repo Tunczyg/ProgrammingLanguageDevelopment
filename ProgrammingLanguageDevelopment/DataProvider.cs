@@ -55,7 +55,7 @@ namespace ProgrammingLanguageDevelopment
         public List<AnnualStatisticData> GetAnnualStatisticsFromBG()
         {
             var parser = new WebParser();
-            var AnnualStatsFromBG = parser.GetDataFromBG();
+            var AnnualStatsFromBG = parser.GetDataFromBG(GetLanguageFeaturesStaticData());
             return AnnualStatsFromBG;
         }
     }
