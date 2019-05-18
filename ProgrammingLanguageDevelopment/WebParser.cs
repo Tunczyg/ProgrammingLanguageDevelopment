@@ -34,7 +34,7 @@ namespace ProgrammingLanguageDevelopment
                     var names = from lang in language.Descendants("h2")
                                 where lang.Attributes["class"] != null && lang.Attributes["class"].Value == "section-title"
                                 select lang;
-                    
+
                     var name = names.Last().InnerText;
 
                     int year = 0; var paradigm = "";
@@ -82,7 +82,7 @@ namespace ProgrammingLanguageDevelopment
                 {
                     var names = from lang in input.Descendants("h2")
                                 select lang;
-                    
+
                     var name = names.Last().InnerText;
 
                     int year = 0; var paradigm = "";
@@ -118,10 +118,10 @@ namespace ProgrammingLanguageDevelopment
             htmlDoc.LoadHtml(html);
 
             var divs = from items in htmlDoc.DocumentNode.Descendants("div")
-                          where items.Attributes["class"] != null
-                          && items.Attributes["class"]
-                          .Value == "div-col columns column-width"
-                          select items;
+                       where items.Attributes["class"] != null
+                       && items.Attributes["class"]
+                       .Value == "div-col columns column-width"
+                       select items;
 
             var infoTables = new List<HtmlNode>();
             foreach (var div in divs)
@@ -145,22 +145,22 @@ namespace ProgrammingLanguageDevelopment
                                         && table.Attributes["class"].Value.Contains("infobox")
                                         select table);
                 }
-            }              
-            
-           foreach(var table in infoTables)
+            }
+
+            foreach (var table in infoTables)
             {
-                var name="";
+                var name = "";
 
                 var names = from caption in table.Descendants("caption")
                             where caption.Attributes["class"] != null && caption.Attributes["class"].Value == "summary"
                             select caption;
-                
-                if (names.Last().InnerText!=null) name=names.Last().InnerText;
+
+                if (names.Last().InnerText != null) name = names.Last().InnerText;
 
                 var rgx = new Regex(@"(?<=First&#160;appeared</th><td>)(.*?)(?=<)");
                 var year = rgx.Matches(table.InnerHtml).FirstOrDefault();
                 int int_year = 0;
-                if(year != null) Int32.TryParse(year.ToString(), out int_year);
+                if (year != null) Int32.TryParse(year.ToString(), out int_year);
 
                 rgx = new Regex(@"(?<=Typing discipline</a></th><td>)(.*?)(?=</td>)");
                 var typing = rgx.Matches(table.InnerHtml).FirstOrDefault(); //needs further extraction and conversion to Enum, enlarge ProgramminLanguage Enum sets if needed (for sure needed)
@@ -171,32 +171,31 @@ namespace ProgrammingLanguageDevelopment
                 rgx = new Regex(@"(?<=OS</a></th><td>)(.*?)(?=</td>)");
                 var oper_sys = rgx.Matches(table.InnerHtml).FirstOrDefault();
 
-                
+
                 //usually no info about level - leave blank or find an indirect way of extraction
 
                 Console.WriteLine("\t Name: " + name +
                 "\t Int_Year: " + int_year +
                 "\t Typing: " + typing +
-                "\t Paradigm: " + paradigm+
+                "\t Paradigm: " + paradigm +
                 "\t Oper_sys: " + oper_sys);
                 list.Add(new ProgrammingLanguage(name, int_year, new ProgrammingLanguage.Paradigm(), new ProgrammingLanguage.Typing(), new ProgrammingLanguage.Level(), new ProgrammingLanguage.OperatingSystem()));
             }
             return list;
         }
 
-
         public List<AnnualStatisticData> GetDataFromStackOverflowWeb(List<ProgrammingLanguage> RequestedLanguages)
         {
             var statData = new List<AnnualStatisticData>();
 
-            for(var year = 2015; year <= DateTime.Today.Year; year++)
+            for (var year = 2015; year <= DateTime.Today.Year; year++)
             {
-                var html = GetRawSourceCode("https://insights.stackoverflow.com/survey/"+ year + "/");
+                var html = GetRawSourceCode("https://insights.stackoverflow.com/survey/" + year + "/");
                 var htmlDoc = new HtmlDocument();
                 htmlDoc.LoadHtml(html);
 
                 var searchingPhrase = "";
-                switch(year)
+                switch (year)
                 {
                     case 2015:
                         {
@@ -221,8 +220,8 @@ namespace ProgrammingLanguageDevelopment
                 }
 
                 var inputs = from items in htmlDoc.DocumentNode.Descendants("div")
-                                         where items.Attributes["id"] != null
-                                          && items.Attributes["id"].Value == searchingPhrase
+                             where items.Attributes["id"] != null
+                              && items.Attributes["id"].Value == searchingPhrase
                              select items;
                 foreach (var input in inputs)
                 {
@@ -242,74 +241,75 @@ namespace ProgrammingLanguageDevelopment
 
                     var ile = languages
                         .Select(item => item.InnerText
-                        .Split(new char[0], StringSplitOptions.RemoveEmptyEntries)); 
+                        .Split(new char[0], StringSplitOptions.RemoveEmptyEntries));
                     statData.AddRange(from data in nameAndPopularity
-                                       where RequestedLanguages.Any(language => 
-                                            String.Equals(language.Name,data[0], StringComparison.CurrentCultureIgnoreCase)) 
-                                       select new AnnualStatisticData(data[0], year));
+                                      where RequestedLanguages.Any(language =>
+                                           String.Equals(language.Name, data[0], StringComparison.CurrentCultureIgnoreCase))
+                                      select new AnnualStatisticData(data[0], year));
 
-                    foreach(var item in statData)
+                    foreach (var item in statData)
                     {
-                        var lanData = nameAndPopularity.FirstOrDefault(data => 
+                        var lanData = nameAndPopularity.FirstOrDefault(data =>
                             String.Equals(item.LanguageName, data[0], StringComparison.CurrentCultureIgnoreCase));
-                            Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
-                            item.PopularitySurvey = result;
+                        Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
+                        item.PopularitySurvey = result;
                     }
                 }
             }
             return statData;
         }
-        
+
         public List<AnnualStatisticData> GetDataFromBG()
         {
             var data_list = new List<AnnualStatisticData>();
 
 
             int amount_of_books;
-            string[] tab_of_languages = new string[] {"java","python","c","c%2B%2B","visualBasicNET","c%23","javaScript","php","sql","objectiveC","matlab","assembly","perl","ruby","groovy","swift","go","objectPascal","visualBasic"};
+            string[] tab_of_languages = new string[] { "java", "python", "c", "c%2B%2B", "visualBasicNET", "c%23", "javaScript", "php", "sql", "objectiveC", "matlab", "assembly", "perl", "ruby", "groovy", "swift", "go", "objectPascal", "visualBasic" };
 
-            for(int i=0; i < 19; i++)
-            {   
+            for (int i = 0; i < 19; i++)
+            {
                 var name_to_obj = tab_of_languages[i];
 
-            for(var year = 2015; year <= DateTime.Today.Year; year++)
-            {
-            var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1="+ tab_of_languages[i] +"&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml(html);
+                for (var year = 2015; year <= DateTime.Today.Year; year++)
+                {
+                    var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1=" + tab_of_languages[i] + "&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");
+                    var htmlDoc = new HtmlDocument();
+                    htmlDoc.LoadHtml(html);
 
-            var year_to_obj = year;
+                    var year_to_obj = year;
 
-            var checks = from check in htmlDoc.DocumentNode.Descendants("ul")
-                         where check.Attributes["class"] != null && check.Attributes["class"].Value == "page-messages"
-                         select check;
+                    var checks = from check in htmlDoc.DocumentNode.Descendants("ul")
+                                 where check.Attributes["class"] != null && check.Attributes["class"].Value == "page-messages"
+                                 select check;
 
-            if(!checks.Any())
-            {
-
-             var inputs = from input in htmlDoc.DocumentNode.Descendants("div")
-             where input.Attributes["class"] != null && input.Attributes["class"].Value == "resultCount"
-             select input;
-                if (inputs.Any())
+                    if (!checks.Any())
                     {
-                         string s1 = (inputs.Last().InnerText);
-                         amount_of_books = Int32.Parse(s1.Remove(0,23).Trim().Trim( new Char[] { '.' } ));
+
+                        var inputs = from input in htmlDoc.DocumentNode.Descendants("div")
+                                     where input.Attributes["class"] != null && input.Attributes["class"].Value == "resultCount"
+                                     select input;
+                        if (inputs.Any())
+                        {
+                            string s1 = (inputs.Last().InnerText);
+                            amount_of_books = Int32.Parse(s1.Remove(0, 23).Trim().Trim(new Char[] { '.' }));
+                        }
+                        else amount_of_books = 0;
                     }
-                else amount_of_books = 0;
+                    else amount_of_books = 0;
+
+                    AnnualStatisticData obj = new AnnualStatisticData(name_to_obj, year_to_obj);
+                    data_list.Add(obj);
+                    obj.PublicationsAmount = amount_of_books;
+
+                    /* foreach (AnnualStatisticData obj in data_list)
+                    {
+                         Console.WriteLine("Year: " + obj.Year +
+                         "\nLanguage: " + obj.LanguageName +
+                         "\nPublicationsAmount: " + obj.PublicationsAmount);
+                    }*/
+                }                
             }
-            else amount_of_books = 0;
-
-            AnnualStatisticData obj = new AnnualStatisticData(name_to_obj, year_to_obj); 
-            data_list.Add(obj);
-            obj.PublicationsAmount = amount_of_books;
-
-            /* foreach (AnnualStatisticData obj in data_list)
-            {
-                 Console.WriteLine("Year: " + obj.Year +
-                 "\nLanguage: " + obj.LanguageName +
-                 "\nPublicationsAmount: " + obj.PublicationsAmount);
-            }*/
-
             return data_list;
         }
 
@@ -349,4 +349,3 @@ namespace ProgrammingLanguageDevelopment
         }
     }
 }
-    
