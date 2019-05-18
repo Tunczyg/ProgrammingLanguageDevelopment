@@ -41,9 +41,10 @@ namespace ProgrammingLanguageDevelopment
         public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)
         {
             var parser = new WebParser();
-            var annualStats = parser.GetDataFromStackOverflowWeb(requestedLanguages);
+            var annualStatsSO = parser.GetDataFromStackOverflowWeb(requestedLanguages);
+            var annualStatsSOGH = parser.GetDataFromGitHubWeb(requestedLanguages, annualStatsSO);
             //there annualStats should be filled with more data: publicatons from agh bg, pull requests from github, etc
-            return annualStats;
+            return annualStatsSOGH;
         }
     }
 }

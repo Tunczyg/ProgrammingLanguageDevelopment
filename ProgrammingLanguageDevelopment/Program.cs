@@ -14,9 +14,6 @@ namespace ProgrammingLanguageDevelopment
             var staticLanguageFeatures = dataProvider.GetLanguageFeaturesDynamicData();
             var stats = dataProvider.GetAnnualStatistics(staticLanguageFeatures);
 
-            //DEBUG
-            var webParser = new WebParser();
-            var listAnnualStatisticData = webParser.GetDataFromGitHubWeb(dataProvider.GetLanguageFeaturesStaticData());
             Console.WriteLine("Hello World!");
         }
     }

@@ -141,7 +141,7 @@ namespace ProgrammingLanguageDevelopment
             return statData;
         }
 
-        public List<AnnualStatisticData> GetDataFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages)
+        public List<AnnualStatisticData> GetDataFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
         {
             var statData = new List<AnnualStatisticData>();
 
@@ -168,19 +168,52 @@ namespace ProgrammingLanguageDevelopment
                 var jsonResponseFormat = "{\"items\": [\n" + responseFromServer + "\n]}";
                 var jsons = JObject.Parse(jsonResponseFormat).SelectToken("items");
 
-                foreach (var item in jsons)
+                var statsGH = new List<AnnualStatisticData>();
+                foreach (var outerLoopItem in jsons)
                 {
-                    //example of usage - not a proper one in our situation
-                    var record = new AnnualStatisticData(item.SelectToken("name").ToString(), Int32.Parse(item.SelectToken("year").ToString()));
-                    record.PullRequestsAmount = Int32.Parse(item.SelectToken("count").ToString());
+                    var name = outerLoopItem.SelectToken("name").ToString();
+                    var year = outerLoopItem.SelectToken("year").ToString();
+
+                    var allQuaters = jsons.Where(innerLoopItem =>
+                    string.Equals(innerLoopItem.SelectToken("name").ToString(), name, StringComparison.CurrentCultureIgnoreCase) &&
+                    string.Equals(innerLoopItem.SelectToken("year").ToString(), year, StringComparison.CurrentCultureIgnoreCase));
+                    var annualSum = allQuaters.Sum(item => int.Parse(item.SelectToken("count").ToString()));
+                    var newRecord = new AnnualStatisticData(name, int.Parse(year));
+                    newRecord.PullRequestsAmount = annualSum;
+                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year))
+                        continue;
+                    statsGH.Add(newRecord);
                 }
+
+                //selecting only requested languages
+                var requestedStats = statsGH.Where(record => 
+                    RequestedLanguages.Any(language => 
+                    string.Equals(language.Name, record.LanguageName, StringComparison.CurrentCultureIgnoreCase)))
+                    .ToList();
+                //extract partially completed stats
+                var statsToBeFilled = requestedStats.Where(record => ExistingStats.Any(item =>
+                    string.Equals(item.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    item.Year == record.Year))
+                    .ToList();
+                //complete those stats:
+                foreach(var stat in statsToBeFilled)
+                {
+                    var missingData = ExistingStats.FirstOrDefault(record => 
+                    string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    stat.Year == record.Year);
+                    stat.PopularitySurvey = missingData.PopularitySurvey;
+                }
+                //add to the returned result
+                statData.AddRange(statsToBeFilled);
+
+                var newRecOnly = requestedStats.Where(stat1 => !statsToBeFilled.Any(stat2 => stat1 == stat2));
 
                 // TODO: NAPISAÆ OBRÓBKÊ OTRZYMYWANYCH DANYCH
                 // 1) Parsowanie Jsona do stringów : ok
-                // 2) Sprawdzenie czy chcemy info o danym jêzyku
-                // 3) Sprawdzenie czy dany jezyk+rok wystepuje juz na liscie
-                // 4) Dodanie wpisu jezyk+rok+count/dodanie wartosci count do wpisu
-                // 5) Zwrocenie listy
+                // 2) Sprawdzenie czy chcemy info o danym jêzyku: ok
+                // 3) Sprawdzenie czy dany jezyk+rok wystepuje juz na liscie i uzupelnienie ok
+                // 4) Jeœli nie wystêpuje to stworzenie nowego rekordu
+                // 5) Scalenie wyników z 3 i 4 i zwrocenie listy
 
                 // Display the content.  
                 Console.WriteLine(responseFromServer);
@@ -188,7 +221,7 @@ namespace ProgrammingLanguageDevelopment
 
             // Close the response.  
             response.Close();
-
+            
             return statData;
         }
 
