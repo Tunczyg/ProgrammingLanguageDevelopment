@@ -164,12 +164,18 @@ namespace ProgrammingLanguageDevelopment
 
                 rgx = new Regex(@"(?<=Typing discipline</a></th><td>)(.*?)(?=</td>)");
                 var typing = rgx.Matches(table.InnerHtml).FirstOrDefault(); //needs further extraction and conversion to Enum, enlarge ProgramminLanguage Enum sets if needed (for sure needed)
+                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
+                if(typing!=null) typing=rgx.Matches(typing.Value).FirstOrDefault();
 
-                rgx = new Regex(@"(?<=Paradigm</a></th>)(.*?)(?=</td>)");
-                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault(); //the same story as typing
+                rgx = new Regex(@"(?<=Paradigm</a></th><td><a)(.*?)(?=</td>)");
+                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault(); //the same story as typing                
+                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
+                if(paradigm!=null) paradigm=rgx.Matches(paradigm.Value).FirstOrDefault();
 
                 rgx = new Regex(@"(?<=OS</a></th><td>)(.*?)(?=</td>)");
                 var oper_sys = rgx.Matches(table.InnerHtml).FirstOrDefault();
+                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
+                if(oper_sys!=null) oper_sys=rgx.Matches(oper_sys.Value).FirstOrDefault();
 
 
                 //usually no info about level - leave blank or find an indirect way of extraction
@@ -181,6 +187,7 @@ namespace ProgrammingLanguageDevelopment
                 "\t Oper_sys: " + oper_sys);
                 list.Add(new ProgrammingLanguage(name, int_year, new ProgrammingLanguage.Paradigm(), new ProgrammingLanguage.Typing(), new ProgrammingLanguage.Level(), new ProgrammingLanguage.OperatingSystem()));
             }
+             
             return list;
         }
 
