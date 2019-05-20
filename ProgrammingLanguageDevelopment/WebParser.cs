@@ -162,21 +162,30 @@ namespace ProgrammingLanguageDevelopment
                 int int_year = 0;
                 if (year != null) Int32.TryParse(year.ToString(), out int_year);
 
-                rgx = new Regex(@"(?<=Typing discipline</a></th><td>)(.*?)(?=</td>)");
-                var typing = rgx.Matches(table.InnerHtml).FirstOrDefault(); //needs further extraction and conversion to Enum, enlarge ProgramminLanguage Enum sets if needed (for sure needed)
-                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
-                if(typing!=null) typing=rgx.Matches(typing.Value).FirstOrDefault();
 
-                rgx = new Regex(@"(?<=Paradigm</a></th><td><a)(.*?)(?=</td>)");
-                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault(); //the same story as typing                
+                 rgx = new Regex(@"(?<=Paradigm</a></th><td><a)(.*?)(?=</td>)");
+                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault();              
                 rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
                 if(paradigm!=null) paradigm=rgx.Matches(paradigm.Value).FirstOrDefault();
+
+
+                rgx = new Regex(@"(?<=Typing discipline</a></th><td>)(.*?)(?=</td>)");
+                var typing = rgx.Matches(table.InnerHtml).FirstOrDefault(); 
+                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
+                if(typing!=null) typing=rgx.Matches(typing.Value).FirstOrDefault();
+                
 
                 rgx = new Regex(@"(?<=OS</a></th><td>)(.*?)(?=</td>)");
                 var oper_sys = rgx.Matches(table.InnerHtml).FirstOrDefault();
                 rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
                 if(oper_sys!=null) oper_sys=rgx.Matches(oper_sys.Value).FirstOrDefault();
 
+                string level="";
+        
+                Enum.TryParse(paradigm.Value, out ProgrammingLanguage.Paradigm _Paradigm);
+                Enum.TryParse(typing.Value, out ProgrammingLanguage.Typing _Typing);
+                Enum.TryParse(level, out ProgrammingLanguage.Level _Level);
+                Enum.TryParse(oper_sys.Value, out ProgrammingLanguage.OperatingSystem _Operating_system);
 
                 //usually no info about level - leave blank or find an indirect way of extraction
 
@@ -185,7 +194,7 @@ namespace ProgrammingLanguageDevelopment
                 "\t Typing: " + typing +
                 "\t Paradigm: " + paradigm +
                 "\t Oper_sys: " + oper_sys);
-                list.Add(new ProgrammingLanguage(name, int_year, new ProgrammingLanguage.Paradigm(), new ProgrammingLanguage.Typing(), new ProgrammingLanguage.Level(), new ProgrammingLanguage.OperatingSystem()));
+                list.Add(new ProgrammingLanguage(name, int_year, _Paradigm, _Typing, _Level, _Operating_system));
             }
              
             return list;
