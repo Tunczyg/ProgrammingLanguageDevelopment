@@ -4,8 +4,10 @@ using System.IO;
 using System.Net;
 using System.Text;
 using HtmlAgilityPack;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
 
 namespace ProgrammingLanguageDevelopment
 {
@@ -270,8 +272,90 @@ namespace ProgrammingLanguageDevelopment
                         Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
                         item.PopularitySurvey = result;
                     }
+                    
                 }
+                
             }
+            return statData;
+        }
+
+        public List<AnnualStatisticData> GetDataFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
+        {
+            var statData = new List<AnnualStatisticData>();
+
+            // Create a request for the URL.   
+            WebRequest request = WebRequest.Create(
+              "https://madnight.github.io/githut/gh-pull-request_56d080.json");
+            // If required by the server, set the credentials.  
+            request.Credentials = CredentialCache.DefaultCredentials;
+
+            // Get the response.  
+            WebResponse response = request.GetResponse();
+            // Display the status.  
+            //Console.WriteLine(((HttpWebResponse)response).StatusDescription);
+
+            // Get the stream containing content returned by the server. 
+            // The using block ensures the stream is automatically closed. 
+            using (Stream dataStream = response.GetResponseStream())
+            {
+                // Open the stream using a StreamReader for easy access.  
+                StreamReader reader = new StreamReader(dataStream);
+                // Read the content.  
+                
+                var responseFromServer = reader.ReadToEnd().Replace("}\n{", "},\n{").Replace("}\r\n{", "},\n{");
+                var jsonResponseFormat = "{\"items\": [\n" + responseFromServer + "\n]}";
+                var jsons = JObject.Parse(jsonResponseFormat).SelectToken("items");
+
+                var statsGH = new List<AnnualStatisticData>();
+                foreach (var outerLoopItem in jsons)
+                {
+                    var name = outerLoopItem.SelectToken("name").ToString();
+                    var year = outerLoopItem.SelectToken("year").ToString();
+
+                    var allQuaters = jsons.Where(innerLoopItem =>
+                    string.Equals(innerLoopItem.SelectToken("name").ToString(), name, StringComparison.CurrentCultureIgnoreCase) &&
+                    string.Equals(innerLoopItem.SelectToken("year").ToString(), year, StringComparison.CurrentCultureIgnoreCase));
+                    var annualSum = allQuaters.Sum(item => int.Parse(item.SelectToken("count").ToString()));
+                    var newRecord = new AnnualStatisticData(name, int.Parse(year));
+                    newRecord.PullRequestsAmount = annualSum;
+                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year))
+                        continue;
+                    statsGH.Add(newRecord);
+                }
+
+                //selecting only requested languages
+                var requestedStats = statsGH.Where(record => 
+                    RequestedLanguages.Any(language => 
+                    string.Equals(language.Name, record.LanguageName, StringComparison.CurrentCultureIgnoreCase)))
+                    .ToList();
+                //extract stats consistent with existing stats
+                var existingStatsDuplicates = requestedStats.Where(record => ExistingStats.Any(item =>
+                    string.Equals(item.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    item.Year == record.Year))
+                    .ToList();
+                //and those non consistent
+                var existingStatsNonDuplicates = ExistingStats.Where(record =>
+                    existingStatsDuplicates.Any(item =>
+                    item == record)).ToList();
+
+                //complete duplicated stats
+                foreach (var stat in existingStatsDuplicates)
+                {
+                    var missingData = ExistingStats.FirstOrDefault(record => 
+                    string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    stat.Year == record.Year);
+                    stat.PopularitySurvey = missingData.PopularitySurvey;
+                }
+                //records from GH only:
+                var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
+
+                //add to the returned result
+                statData.AddRange(existingStatsDuplicates);
+                statData.AddRange(existingStatsNonDuplicates);
+                statData.AddRange(ghOnly);
+            }
+            // Close the response.  
+            response.Close();            
             return statData;
         }
 
