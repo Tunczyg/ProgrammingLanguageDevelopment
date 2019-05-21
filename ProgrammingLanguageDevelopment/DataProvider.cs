@@ -37,6 +37,12 @@ namespace ProgrammingLanguageDevelopment
             var langData = parser.GetDataFromComputerScienceWeb();
             return langData;
         }
+        public List<ProgrammingLanguage> GetLanguageFeaturesFromWikipedia()
+        {
+            var parser = new WebParser();
+            var langData = parser.GetDataFromWikipedia();
+            return langData;
+        }
 
         public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)
         {
@@ -45,6 +51,13 @@ namespace ProgrammingLanguageDevelopment
             var annualStatsSOGH = parser.GetDataFromGitHubWeb(requestedLanguages, annualStatsSO);
             //there annualStats should be filled with more data: publicatons from agh bg, pull requests from github, etc
             return annualStatsSOGH;
+        }
+        
+        public List<AnnualStatisticData> GetAnnualStatisticsFromBG()
+        {
+            var parser = new WebParser();
+            var AnnualStatsFromBG = parser.GetDataFromBG(GetLanguageFeaturesStaticData());
+            return AnnualStatsFromBG;
         }
     }
 }
