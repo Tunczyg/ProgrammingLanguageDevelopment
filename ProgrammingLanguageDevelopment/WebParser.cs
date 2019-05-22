@@ -13,7 +13,7 @@ namespace ProgrammingLanguageDevelopment
 {
     class WebParser
     {
-        public List<ProgrammingLanguage> GetDataFromComputerScienceWeb()
+        public List<ProgrammingLanguage> GetDataFromComputerScienceWeb(List<ProgrammingLanguage> ExistingStats)
         {
             List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
             var html = GetRawSourceCode("https://www.computerscience.org/resources/computer-programming-languages");
@@ -63,55 +63,6 @@ namespace ProgrammingLanguageDevelopment
             }
             return list;
         }
-
-        public List<ProgrammingLanguage> GetDataFromAdminsChoice()
-        {
-            List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
-            var html = GetRawSourceCode("https://www.adminschoice.com/top-10-most-popular-programming-languages");
-            var htmlDoc = new HtmlDocument();
-            htmlDoc.LoadHtml(html);
-
-            var inputs = from input in htmlDoc.DocumentNode.Descendants("div")
-                         where input.Attributes["class"] != null && input.Attributes["class"].Value == "entry clearfix"
-                         select input;
-
-            foreach (var input in inputs)
-            {
-                var languages = from items in input.Descendants("h2")
-                                select items;
-
-                foreach (var language in languages)
-                {
-                    var names = from lang in input.Descendants("h2")
-                                select lang;
-
-                    var name = names.Last().InnerText;
-
-                    int year = 0; var paradigm = "";
-                    var typing = ""; var level = "";
-
-                    Regex rgx = new Regex(@"\d{4}");
-                    MatchCollection matches = rgx.Matches(language.InnerText);
-                    if (matches.Count > 0) year = int.Parse(matches.Last().Value);
-
-                    Regex rgx2 = new Regex(@"object-oriented|imperative|structure|multi-paradigm");
-                    MatchCollection matches2 = rgx2.Matches(language.InnerText);
-                    if (matches2.Count > 0) paradigm = matches2.Last().Value.ToLower();
-
-                    Regex rgx3 = new Regex(@"static|dynamic");
-                    MatchCollection matches3 = rgx3.Matches(language.InnerText);
-                    if (matches3.Count > 0) typing = matches3.Last().Value.ToLower();
-
-                    Regex rgx4 = new Regex(@"low|high");
-                    MatchCollection matches4 = rgx4.Matches(language.InnerText);
-                    if (matches4.Count > 0) level = matches4.Last().Value.ToLower();
-
-                    list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
-                }
-            }
-            return list;
-        }
-
         public List<ProgrammingLanguage> GetDataFromWikipedia()
         {
             var list = new List<ProgrammingLanguage>();
@@ -165,25 +116,25 @@ namespace ProgrammingLanguageDevelopment
                 if (year != null) Int32.TryParse(year.ToString(), out int_year);
 
 
-                 rgx = new Regex(@"(?<=Paradigm</a></th><td><a)(.*?)(?=</td>)");
-                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault();              
+                rgx = new Regex(@"(?<=Paradigm</a></th><td><a)(.*?)(?=</td>)");
+                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault();
                 rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
-                if(paradigm!=null) paradigm=rgx.Matches(paradigm.Value).FirstOrDefault();
+                if (paradigm != null) paradigm = rgx.Matches(paradigm.Value).FirstOrDefault();
 
 
                 rgx = new Regex(@"(?<=Typing discipline</a></th><td>)(.*?)(?=</td>)");
-                var typing = rgx.Matches(table.InnerHtml).FirstOrDefault(); 
+                var typing = rgx.Matches(table.InnerHtml).FirstOrDefault();
                 rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
-                if(typing!=null) typing=rgx.Matches(typing.Value).FirstOrDefault();
-                
+                if (typing != null) typing = rgx.Matches(typing.Value).FirstOrDefault();
+
 
                 rgx = new Regex(@"(?<=OS</a></th><td>)(.*?)(?=</td>)");
                 var oper_sys = rgx.Matches(table.InnerHtml).FirstOrDefault();
                 rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
-                if(oper_sys!=null) oper_sys=rgx.Matches(oper_sys.Value).FirstOrDefault();
+                if (oper_sys != null) oper_sys = rgx.Matches(oper_sys.Value).FirstOrDefault();
 
-                string level="";
-        
+                string level = "";
+
                 Enum.TryParse(paradigm.Value, out ProgrammingLanguage.Paradigm _Paradigm);
                 Enum.TryParse(typing.Value, out ProgrammingLanguage.Typing _Typing);
                 Enum.TryParse(level, out ProgrammingLanguage.Level _Level);
@@ -198,10 +149,9 @@ namespace ProgrammingLanguageDevelopment
                 "\t Oper_sys: " + oper_sys);
                 list.Add(new ProgrammingLanguage(name, int_year, _Paradigm, _Typing, _Level, _Operating_system));
             }
-             
+
             return list;
         }
-
         public List<AnnualStatisticData> GetDataFromStackOverflowWeb(List<ProgrammingLanguage> RequestedLanguages)
         {
             var statData = new List<AnnualStatisticData>();
@@ -272,13 +222,12 @@ namespace ProgrammingLanguageDevelopment
                         Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
                         item.PopularitySurvey = result;
                     }
-                    
+
                 }
-                
+
             }
             return statData;
         }
-
         public List<AnnualStatisticData> GetDataFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
         {
             var statData = new List<AnnualStatisticData>();
@@ -358,8 +307,7 @@ namespace ProgrammingLanguageDevelopment
             response.Close();            
             return statData;
         }
-
-        public List<AnnualStatisticData> GetDataFromBG(List<ProgrammingLanguage> RequestedLanguages)
+        public List<AnnualStatisticData> GetDataFromBG(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
         {
             var data_list = new List<AnnualStatisticData>();
             int amount_of_books;

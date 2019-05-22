@@ -12,12 +12,7 @@ namespace ProgrammingLanguageDevelopment
         {
             var dataProvider = new DataProvider();
             var staticLanguageFeatures = dataProvider.GetLanguageFeaturesDynamicData();
-            var languageFeatures = dataProvider.GetLanguageFeaturesFromWikipedia();
             var stats = dataProvider.GetAnnualStatistics(staticLanguageFeatures);
-
-            //Console.WriteLine("Hello World!");
-
-            var data_from_BG = dataProvider.GetAnnualStatisticsFromBG();
         }
     }
 }

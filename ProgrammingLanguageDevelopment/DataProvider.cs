@@ -34,13 +34,11 @@ namespace ProgrammingLanguageDevelopment
         public List<ProgrammingLanguage> GetLanguageFeaturesDynamicData()
         {
             var parser = new WebParser();
-            var langData = parser.GetDataFromComputerScienceWeb();
-            return langData;
-        }
-        public List<ProgrammingLanguage> GetLanguageFeaturesFromWikipedia()
-        {
-            var parser = new WebParser();
-            var langData = parser.GetDataFromWikipedia();
+            var wikiLang = parser.GetDataFromWikipedia();
+            var langData = parser.GetDataFromComputerScienceWeb(wikiLang);
+            //Patrycja TODO: check if wikiLang has already all the data extracted by GetDataFromComputerScienceWeb.
+            //if so, return unchangd set, if not - add information extracted by GetDataFromComputerScienceWeb and return it
+
             return langData;
         }
 
@@ -48,16 +46,17 @@ namespace ProgrammingLanguageDevelopment
         {
             var parser = new WebParser();
             var annualStatsSO = parser.GetDataFromStackOverflowWeb(requestedLanguages);
-            var annualStatsSOGH = parser.GetDataFromGitHubWeb(requestedLanguages, annualStatsSO);
-            //there annualStats should be filled with more data: publicatons from agh bg, pull requests from github, etc
-            return annualStatsSOGH;
+            var annualStatsSOGH = parser.GetDataFromGitHubWeb(requestedLanguages, annualStatsSO); 
+            var annualStatsSOGHBG = parser.GetDataFromBG(requestedLanguages, annualStatsSOGH);
+            //basing on GetDataFromGitHubWeb: 
+            //mandatory:
+            //add information about language ONLY if alread exists in annualStatsSOGH
+            //optional:
+            //otherwise - if annualStatsSOGH does not contain it but the language is in requestedLanguages
+            //add a new instance of AnnualStatisticData to the returned set with information from BG
+
+            return annualStatsSOGHBG;
         }
         
-        public List<AnnualStatisticData> GetAnnualStatisticsFromBG()
-        {
-            var parser = new WebParser();
-            var AnnualStatsFromBG = parser.GetDataFromBG(GetLanguageFeaturesStaticData());
-            return AnnualStatsFromBG;
-        }
     }
 }
