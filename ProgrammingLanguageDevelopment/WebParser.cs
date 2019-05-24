@@ -13,7 +13,7 @@ namespace ProgrammingLanguageDevelopment
 {
     class WebParser
     {
-        public List<ProgrammingLanguage> GetDataFromComputerScienceWeb(List<ProgrammingLanguage> ExistingStats)
+        public List<ProgrammingLanguage> GetDataFromComputerScienceWeb(List<ProgrammingLanguage> ExistingLanguages)
         {
             List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
             var html = GetRawSourceCode("https://www.computerscience.org/resources/computer-programming-languages");
@@ -102,13 +102,12 @@ namespace ProgrammingLanguageDevelopment
 
             foreach (var table in infoTables)
             {
-                var name = "";
-
                 var names = from caption in table.Descendants("caption")
                             where caption.Attributes["class"] != null && caption.Attributes["class"].Value == "summary"
                             select caption;
 
-                if (names.Last().InnerText != null) name = names.Last().InnerText;
+                if (names.Count() == 0 || names.Last() == null)  continue;                
+                var name = names.Last().InnerText;
 
                 var rgx = new Regex(@"(?<=First&#160;appeared</th><td>)(.*?)(?=<)");
                 var year = rgx.Matches(table.InnerHtml).FirstOrDefault();
@@ -117,37 +116,77 @@ namespace ProgrammingLanguageDevelopment
 
 
                 rgx = new Regex(@"(?<=Paradigm</a></th><td><a)(.*?)(?=</td>)");
-                var paradigm = rgx.Matches(table.InnerHtml).FirstOrDefault();
-                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
-                if (paradigm != null) paradigm = rgx.Matches(paradigm.Value).FirstOrDefault();
+                var maches_paradigm = rgx.Matches(table.InnerHtml);
+                var paradigms = new List<ProgrammingLanguage.Paradigm>();
+                if (maches_paradigm.Count > 0)
+                {
+                    rgx = new Regex("(?<=\">)(.*?)(?=</a>)");
+                    var p = rgx.Matches(maches_paradigm.First().Value);
+                    foreach (Match match in p)
+                    {
+                        var capture = match.Value.ToLower().Replace("-", "_");
+                        capture = capture.Replace(" ", "_");
+                        capture = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(capture);
 
+                        Enum.TryParse(capture, out ProgrammingLanguage.Paradigm result);
+                        if (result == ProgrammingLanguage.Paradigm.Other &&
+                            paradigms.Any(item => item == ProgrammingLanguage.Paradigm.Other))
+                            continue;
+                        paradigms.Add(result);
+                    }
+                }
 
                 rgx = new Regex(@"(?<=Typing discipline</a></th><td>)(.*?)(?=</td>)");
-                var typing = rgx.Matches(table.InnerHtml).FirstOrDefault();
-                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
-                if (typing != null) typing = rgx.Matches(typing.Value).FirstOrDefault();
+                var maches_typing = rgx.Matches(table.InnerHtml);
+                var typings = new List<ProgrammingLanguage.Typing>();
+                if (maches_typing.Count > 0)
+                {
+                    rgx = new Regex("(?<=\">)(.*?)(?=</a>)");
+                    var t = rgx.Matches(maches_typing.First().Value);
+                    foreach (Match match in t)
+                    {
+                        var capture = match.Value.ToLower().Replace("-", "_");
+                        capture = capture.Replace(" ", "_");
+                        capture = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(capture);
 
+                        Enum.TryParse(capture, out ProgrammingLanguage.Typing result);
+                        if (result == ProgrammingLanguage.Typing.Other &&
+                            typings.Any(item => item == ProgrammingLanguage.Typing.Other))
+                            continue;
+                        typings.Add(result);
+                    }
+                }
 
                 rgx = new Regex(@"(?<=OS</a></th><td>)(.*?)(?=</td>)");
-                var oper_sys = rgx.Matches(table.InnerHtml).FirstOrDefault();
-                rgx = new Regex(@"(?<=>)(.*?)(?=</a>)");
-                if (oper_sys != null) oper_sys = rgx.Matches(oper_sys.Value).FirstOrDefault();
+                var maches_os = rgx.Matches(table.InnerHtml);
+                var oss = new List<ProgrammingLanguage.OperatingSystem>();
+                if (maches_os.Count > 0)
+                {
+                    rgx = new Regex("(?<=\">)(.*?)(?=</a>)");
+                    var o = rgx.Matches(maches_os.First().Value);
+                    foreach (Match match in o)
+                    {
+                        var capture = match.Value.ToLower().Replace("-", "_");
+                        capture = capture.Replace(" ", "_");
+                        capture = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(capture);
 
-                string level = "";
-
-                Enum.TryParse(paradigm.Value, out ProgrammingLanguage.Paradigm _Paradigm);
-                Enum.TryParse(typing.Value, out ProgrammingLanguage.Typing _Typing);
-                Enum.TryParse(level, out ProgrammingLanguage.Level _Level);
-                Enum.TryParse(oper_sys.Value, out ProgrammingLanguage.OperatingSystem _Operating_system);
+                        Enum.TryParse(capture, out ProgrammingLanguage.OperatingSystem result);
+                        if (result == ProgrammingLanguage.OperatingSystem.Other &&
+                            oss.Any(item => item == ProgrammingLanguage.OperatingSystem.Other))
+                            continue;
+                        oss.Add(result);
+                    }
+                }
 
                 //usually no info about level - leave blank or find an indirect way of extraction
+                var lvls = new List<ProgrammingLanguage.Level>();
+                Enum.TryParse("", out ProgrammingLanguage.Level lvl);
+                lvls.Add(lvl);
 
-                Console.WriteLine("\t Name: " + name +
-                "\t Int_Year: " + int_year +
-                "\t Typing: " + typing +
-                "\t Paradigm: " + paradigm +
-                "\t Oper_sys: " + oper_sys);
-                list.Add(new ProgrammingLanguage(name, int_year, _Paradigm, _Typing, _Level, _Operating_system));
+                //if we dont have sufficient information we skip that record
+                if ((paradigms.Any() ? 1 : 0) + (typings.Any() ? 1 : 0) + (oss.Any() ? 1 : 0) < 2)
+                    continue;
+                list.Add(new ProgrammingLanguage(name, int_year, paradigms, typings, lvls, oss));
             }
 
             return list;
@@ -307,24 +346,29 @@ namespace ProgrammingLanguageDevelopment
             response.Close();            
             return statData;
         }
-        public List<AnnualStatisticData> GetDataFromBG(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
+        public List<AnnualStatisticData> GetDataFromBG(List<AnnualStatisticData> ExistingStats)
         {
-            var data_list = new List<AnnualStatisticData>();
-            int amount_of_books;
-            
-            for (int i = 0; i < RequestedLanguages.Count; i++)
+            var names = ExistingStats.Select(item => item.LanguageName);
+            //!! includes edition of object passed to function !!
+            foreach (var language in names)
             {
-                var name_of_language = RequestedLanguages[i].Name;
-
-                if(name_of_language == "c++")
-                    name_of_language = "c%2B%2B";
-
-                if(name_of_language == "c#")
-                    name_of_language = "c%23";
-          
+                var name_of_language = language;
+                //getting rid of special signs, parenthesis and slashes before searching
+                name_of_language = name_of_language.Replace("++", "%2B%2B");
+                name_of_language = name_of_language.Replace("#", "%23");
+                var rgx = new Regex(@".*?(?=\()");
+                var matches = rgx.Matches(name_of_language);
+                if (matches.Count > 0) name_of_language = matches.First().Value;
+                else
+                {
+                    rgx = new Regex(@".*?(?=\/)");
+                    matches = rgx.Matches(name_of_language);
+                    if (matches.Count > 0) name_of_language = matches.First().Value;
+                }
 
                 for (var year = 2015; year <= DateTime.Today.Year; year++)
                 {
+                    int amount_of_books = 0;
                     var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1=" + name_of_language + "&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");
                     var htmlDoc = new HtmlDocument();
                     htmlDoc.LoadHtml(html);
@@ -344,25 +388,17 @@ namespace ProgrammingLanguageDevelopment
                         if (inputs.Any())
                         {
                             string s1 = (inputs.Last().InnerText);
-                            amount_of_books = Int32.Parse(s1.Remove(0, 23).Trim().Trim(new Char[] { '.' }));
+                            amount_of_books = int.Parse(s1.Remove(0, 23).Trim().Trim(new Char[] { '.' }));
                         }
-                        else amount_of_books = 0;
                     }
-                    else amount_of_books = 0;
-
-                    AnnualStatisticData obj = new AnnualStatisticData(name_of_language, year_to_obj);
-                    data_list.Add(obj);
-                    obj.PublicationsAmount = amount_of_books;
-
-                    /* foreach (AnnualStatisticData obj in data_list)
-                    {
-                         Console.WriteLine("Year: " + obj.Year +
-                         "\nLanguage: " + obj.LanguageName +
-                         "\nPublicationsAmount: " + obj.PublicationsAmount);
-                    }*/
+                    var existingRecord = ExistingStats.FirstOrDefault(item =>
+                        item.LanguageName.Equals(name_of_language, StringComparison.CurrentCultureIgnoreCase) &&
+                        item.Year == year_to_obj);
+                    if (existingRecord != null)
+                        existingRecord.PublicationsAmount = amount_of_books;
                 }                
             }
-            return data_list;
+            return ExistingStats;
         }
 
         string GetRawSourceCode(string urlAddress)
