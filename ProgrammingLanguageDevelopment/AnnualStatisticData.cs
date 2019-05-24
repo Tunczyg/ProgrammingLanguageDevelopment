@@ -13,7 +13,6 @@ namespace ProgrammingLanguageDevelopment
     {
         public string LanguageName { get; }
         public int Year { get; }
-        public double TiobeIndex { get; set; }
         public double PopularitySurvey { get; set; }
         public int PullRequestsAmount { get; set; }
         public int PublicationsAmount { get; set; }
