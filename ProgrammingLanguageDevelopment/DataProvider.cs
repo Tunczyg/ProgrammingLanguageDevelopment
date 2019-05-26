@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace ProgrammingLanguageDevelopment
@@ -35,11 +36,9 @@ namespace ProgrammingLanguageDevelopment
         {
             var parser = new WebParser();
             var wikiLang = parser.GetDataFromWikipedia();
-            //var langData = parser.GetDataFromComputerScienceWeb(wikiLang);
-            //Patrycja TODO: check if wikiLang has already all the data extracted by GetDataFromComputerScienceWeb.
-            //if so, return unchangd set, if not - add information extracted by GetDataFromComputerScienceWeb and return it
+            var langData = parser.GetDataFromComputerScienceWeb(wikiLang);
 
-            return wikiLang;
+            return langData;
         }
 
         public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)

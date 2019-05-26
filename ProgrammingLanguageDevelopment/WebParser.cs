@@ -15,7 +15,7 @@ namespace ProgrammingLanguageDevelopment
     {
         public List<ProgrammingLanguage> GetDataFromComputerScienceWeb(List<ProgrammingLanguage> ExistingLanguages)
         {
-            List<ProgrammingLanguage> list = new List<ProgrammingLanguage>();
+
             var html = GetRawSourceCode("https://www.computerscience.org/resources/computer-programming-languages");
             var htmlDoc = new HtmlDocument();
             htmlDoc.LoadHtml(html);
@@ -33,36 +33,81 @@ namespace ProgrammingLanguageDevelopment
 
                 foreach (var language in languages)
                 {
+
                     var names = from lang in language.Descendants("h2")
                                 where lang.Attributes["class"] != null && lang.Attributes["class"].Value == "section-title"
                                 select lang;
 
                     var name = names.Last().InnerText;
 
-                    int year = 0; var paradigm = "";
-                    var typing = ""; var level = "";
+                    foreach (var exist in ExistingLanguages)
+                    {
+                        if (exist.Name.ToLower() == name.ToLower())
+                        {
+                            int year = 0;
+                            string paradigm = "";
+                            var typing = ""; var level = "";
 
-                    Regex rgx = new Regex(@"\d{4}");
-                    MatchCollection matches = rgx.Matches(language.InnerText);
-                    if (matches.Count > 0) year = int.Parse(matches.Last().Value);
+                            //year
+                            if (exist.Year == 0)
+                            {
+                                Regex rgx = new Regex(@"\d{4}");
+                                MatchCollection matches = rgx.Matches(language.InnerText);
+                                if (matches.Count > 0) year = int.Parse(matches.Last().Value);
+                                exist.Year = year;
+                            }
 
-                    Regex rgx2 = new Regex(@"object-oriented|imperative|structure|multi-paradigm");
-                    MatchCollection matches2 = rgx2.Matches(language.InnerText);
-                    if (matches2.Count > 0) paradigm = matches2.Last().Value.ToLower();
+                            //paradigm
+                            Regex rgx2 = new Regex(@"object-oriented|imperative|structure|multi-paradigm");
+                            MatchCollection matches2 = rgx2.Matches(language.InnerText);
+                            if (matches2.Count > 0)
+                            {
+                                ProgrammingLanguage.Paradigm para_enum;
+                                paradigm = matches2.Last().Value.ToLower().Replace("-", "_");
+                                paradigm = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(paradigm);
 
-                    Regex rgx3 = new Regex(@"static|dynamic");
-                    MatchCollection matches3 = rgx3.Matches(language.InnerText);
-                    if (matches3.Count > 0) typing = matches3.Last().Value.ToLower();
+                                Enum.TryParse(paradigm, out para_enum);
+                                if (!(exist._Paradigm.Any(item => item == para_enum)))
+                                    exist._Paradigm.Add(para_enum);
+                            }
+                            
+                            //typing
+                            Regex rgx3 = new Regex(@"static|dynamic");
+                            MatchCollection matches3 = rgx3.Matches(language.InnerText);
+                            if (matches3.Count > 0)
+                            { 
+                                typing = matches3.Last().Value.ToLower();
+                                typing = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(typing);
+                                ProgrammingLanguage.Typing type_enum;
 
-                    Regex rgx4 = new Regex(@"low|high");
-                    MatchCollection matches4 = rgx4.Matches(language.InnerText);
-                    if (matches4.Count > 0) level = matches4.Last().Value.ToLower();
+                                Enum.TryParse(typing, out type_enum);
+                                if (!(exist._Typing.Any(item => item == type_enum)))
+                                    exist._Typing.Add(type_enum);
+                            }
 
-                    list.Add(new ProgrammingLanguage(name, year, paradigm, typing, level));
-                }
+                            //level
+                            Regex rgx4 = new Regex(@"low|high");
+                            MatchCollection matches4 = rgx4.Matches(language.InnerText);
+                            if (matches4.Count > 0)
+                            {
+                                ProgrammingLanguage.Level lvl_enum;
+                                level = matches4.Last().Value.ToLower();
+                                level = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(level);
+
+                                Enum.TryParse(level, out lvl_enum);
+                                if (!(exist._Level.Any(item => item == lvl_enum)))
+                                    exist._Level.Add(lvl_enum);
+                            }
+
+                        }
+                    }
+                }        
+
             }
-            return list;
+            return ExistingLanguages;
         }
+
+
         public List<ProgrammingLanguage> GetDataFromWikipedia()
         {
             var list = new List<ProgrammingLanguage>();
