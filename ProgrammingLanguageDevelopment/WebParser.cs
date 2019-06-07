@@ -251,69 +251,83 @@ namespace ProgrammingLanguageDevelopment
                 var htmlDoc = new HtmlDocument();
                 htmlDoc.LoadHtml(html);
 
-                var searchingPhrase = "";
+                var searchingPhrase = new List<string>();
                 switch (year)
                 {
                     case 2015:
                         {
-                            searchingPhrase = "techLanguages-" + year;
+                            //in 2015 there are also records about 2013 and 2014
+                            searchingPhrase.Add("techLanguages-" + (year - 2));
+                            searchingPhrase.Add("techLanguages-" + (year - 1));
+                            searchingPhrase.Add("techLanguages-" + year);
                             break;
                         }
                     case 2016:
                         {
-                            searchingPhrase = "technology-most-popular-technologies-" + year;
+                            searchingPhrase.Add("technology-most-popular-technologies-" + year);
                             break;
                         }
                     case 2017:
                         {
-                            searchingPhrase = "technology-most-popular-technologies--of-this-category";
+                            searchingPhrase.Add("technology-most-popular-technologies--of-this-category");
                             break;
                         }
                     default:
                         {
-                            searchingPhrase = "technology-most-popular-technologies-all-respondents";
+                            searchingPhrase.Add("technology-most-popular-technologies-all-respondents");
                             break;
                         }
                 }
+                //if we deal with 2015 case then we need to adjust var year
+                if (searchingPhrase.Count > 1) year = 2013;
 
-                var inputs = from items in htmlDoc.DocumentNode.Descendants("div")
-                             where items.Attributes["id"] != null
-                              && items.Attributes["id"].Value == searchingPhrase
-                             select items;
-                foreach (var input in inputs)
+                foreach (var phrase in searchingPhrase)
                 {
-                    var languages = from items in input.ChildNodes.Descendants("div")
-                                    where items.Attributes["class"] != null
-                                    && items.Attributes["class"].Value == "bar-row"
-                                    select items;
-                    //StringSplitOptions.RemoveEmptyEntries
-                    var nameAndPopularity = languages
-                        .Select(item => item.InnerText
-                        .Split(new char[0], StringSplitOptions.RemoveEmptyEntries)
-                        .Select(capture => capture.ToString())
-                        .ToList())
-                        .Select(i => new List<string>() { i[0], i.FirstOrDefault(e => e.Contains("%"))
-                        .Replace('.', ',').Replace('%',' ') })
-                        .ToList();
-
-                    var ile = languages
-                        .Select(item => item.InnerText
-                        .Split(new char[0], StringSplitOptions.RemoveEmptyEntries));
-                    statData.AddRange(from data in nameAndPopularity
-                                      where RequestedLanguages.Any(language =>
-                                           String.Equals(language.Name, data[0], StringComparison.CurrentCultureIgnoreCase))
-                                      select new AnnualStatisticData(data[0], year));
-
-                    foreach (var item in statData)
+                    var annualData = new List<AnnualStatisticData>();
+                    var inputs = from items in htmlDoc.DocumentNode.Descendants("div")
+                                 where items.Attributes["id"] != null
+                                  && items.Attributes["id"].Value == phrase
+                                 select items;
+                    foreach (var input in inputs)
                     {
-                        var lanData = nameAndPopularity.FirstOrDefault(data =>
-                            String.Equals(item.LanguageName, data[0], StringComparison.CurrentCultureIgnoreCase));
-                        Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
-                        item.PopularitySurvey = result;
+                        var languages = from items in input.ChildNodes.Descendants("div")
+                                        where items.Attributes["class"] != null
+                                        && items.Attributes["class"].Value == "bar-row"
+                                        select items;
+                        //StringSplitOptions.RemoveEmptyEntries
+                        var nameAndPopularity = languages
+                            .Select(item => item.InnerText
+                            .Split(new char[0], StringSplitOptions.RemoveEmptyEntries)
+                            .Select(capture => capture.ToString())
+                            .ToList())
+                            .Select(i => new List<string>() {
+                                i.FirstOrDefault(),
+                                i.FirstOrDefault(e => e.Contains("%")) == null ?
+                                    "0" :
+                                    i.FirstOrDefault(e => e.Contains("%"))
+                                        .Replace('.', ',')
+                                        .Replace('%',' ')
+                            })
+                            .ToList();
+                        for (var quarter = 1; quarter <= 4; quarter++)
+                        {
+                            annualData.AddRange(from data in nameAndPopularity
+                                                where RequestedLanguages.Any(language =>
+                                                     String.Equals(language.Name, data[0], StringComparison.CurrentCultureIgnoreCase))
+                                                select new AnnualStatisticData(data[0], year, quarter));
+                        }
+
+                        foreach (var item in annualData)
+                        {
+                            var lanData = nameAndPopularity.FirstOrDefault(data =>
+                                String.Equals(item.LanguageName, data[0], StringComparison.CurrentCultureIgnoreCase));
+                            Double.TryParse(lanData != null && lanData[1] != null ? lanData[1] : "0", out double result);
+                            item.PopularitySurvey = result;
+                        }
+                        if (searchingPhrase.Count > 1) year++;
                     }
-
-                }
-
+                    statData.AddRange(annualData);
+                }                   
             }
             return statData;
         }
@@ -349,13 +363,11 @@ namespace ProgrammingLanguageDevelopment
                 {
                     var name = outerLoopItem.SelectToken("name").ToString();
                     var year = outerLoopItem.SelectToken("year").ToString();
+                    var quarter = outerLoopItem.SelectToken("quarter").ToString();
+                    var count = outerLoopItem.SelectToken("count").ToString();
 
-                    var allQuaters = jsons.Where(innerLoopItem =>
-                    string.Equals(innerLoopItem.SelectToken("name").ToString(), name, StringComparison.CurrentCultureIgnoreCase) &&
-                    string.Equals(innerLoopItem.SelectToken("year").ToString(), year, StringComparison.CurrentCultureIgnoreCase));
-                    var annualSum = allQuaters.Sum(item => int.Parse(item.SelectToken("count").ToString()));
-                    var newRecord = new AnnualStatisticData(name, int.Parse(year));
-                    newRecord.PullRequestsAmount = annualSum;
+                    var newRecord = new AnnualStatisticData(name, int.Parse(year), int.Parse(quarter));
+                    newRecord.PullRequestsAmount = int.Parse(count);
                     if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year))
                         continue;
                     statsGH.Add(newRecord);
@@ -443,11 +455,12 @@ namespace ProgrammingLanguageDevelopment
                             amount_of_books = int.Parse(s1.Remove(0, 23).Trim().Trim(new Char[] { '.' }));
                         }
                     }
-                    var existingRecord = ExistingStats.FirstOrDefault(item =>
-                        item.LanguageName.Equals(name_of_language, StringComparison.CurrentCultureIgnoreCase) &&
-                        item.Year == year_to_obj);
-                    if (existingRecord != null)
-                        existingRecord.PublicationsAmount = amount_of_books;
+                    var existingRecords = ExistingStats.Where(item =>
+                       item.LanguageName.Equals(name_of_language, StringComparison.CurrentCultureIgnoreCase) &&
+                       item.Year == year_to_obj);
+                    if (existingRecords != null)
+                        foreach (var exRec in existingRecords)
+                            exRec.PublicationsAmount = amount_of_books / 4;
                 }                
             }
             return ExistingStats;
