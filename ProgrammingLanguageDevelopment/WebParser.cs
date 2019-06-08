@@ -107,7 +107,6 @@ namespace ProgrammingLanguageDevelopment
             return ExistingLanguages;
         }
 
-
         public List<ProgrammingLanguage> GetDataFromWikipedia()
         {
             var list = new List<ProgrammingLanguage>();
@@ -316,9 +315,9 @@ namespace ProgrammingLanguageDevelopment
         {
             var statData = new List<AnnualStatisticData>();
 
-            // Create a request for the URL.   
+            //Request URL must be changed based on current json link - if throws 404 then update the URL
             WebRequest request = WebRequest.Create(
-              "https://madnight.github.io/githut/gh-pull-request_56d080.json");
+              "https://madnight.github.io/githut/gh-pull-request_ed268f.json");
             // If required by the server, set the credentials.  
             request.Credentials = CredentialCache.DefaultCredentials;
 
