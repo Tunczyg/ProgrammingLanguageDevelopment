@@ -11,7 +11,7 @@ function[]=Future_Prediction(LanguageName,Factor,Horizont,Name,PopularitySurvey_
  %
  %
  % Popularnoœæ= Wsp_1*Stack+Wsp_2*GitHub +Wsp_3*Publikacje
- 
+path = pwd + "\jpegi\";
 load tab.mat;
 btab(:,:) = struct2cell(tab(:))
 % transponuj
@@ -44,6 +44,6 @@ h2=plot(dates_2,Data_2+delta,'-r*');
 legend([h1 h2],{'Data','Prediction'},'location','northwest')
 title(LanguageName);
 grid on;
-saveas(a,Name);
+saveas(a,fullfile(path,Name));
 
 end
