@@ -45,8 +45,11 @@ namespace ProgrammingLanguageDevelopment
         {
             var parser = new WebParser();
             var annualStatsSO = parser.GetDataFromStackOverflowWeb(requestedLanguages);
-            var annualStatsSOGH = parser.GetDataFromGitHubWeb(requestedLanguages, annualStatsSO); 
-            var annualStatsSOGHBG = parser.GetDataFromBG(annualStatsSOGH);
+            var annualStatsSOGH1 = parser.GetPullRequestsFromGitHubWeb(requestedLanguages, annualStatsSO);
+            var annualStatsSOGH2 = parser.GetStarsFromGitHubWeb(requestedLanguages, annualStatsSOGH1);
+            var annualStatsSOGH3 = parser.GetPushesFromGitHubWeb(requestedLanguages, annualStatsSOGH2);
+            var annualStatsSOGH4 = parser.GetIssuesFromGitHubWeb(requestedLanguages, annualStatsSOGH3);
+            var annualStatsSOGHBG = parser.GetDataFromBG(annualStatsSOGH4);
 
             return annualStatsSOGHBG;
         }

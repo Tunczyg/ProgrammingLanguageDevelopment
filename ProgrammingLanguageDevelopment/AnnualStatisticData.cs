@@ -16,6 +16,9 @@ namespace ProgrammingLanguageDevelopment
         public int Quarter { get; }
         public double PopularitySurvey { get; set; }
         public int PullRequestsAmount { get; set; }
+        public int PushAmount { get; set; }
+        public int StarsAmount { get; set; }
+        public int IssuesAmount { get; set; }
         public int PublicationsAmount { get; set; }
 
         public AnnualStatisticData(string languageName, int year, int quarter)
