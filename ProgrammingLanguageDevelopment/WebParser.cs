@@ -337,7 +337,7 @@ namespace ProgrammingLanguageDevelopment
 
             // Create a request for the URL.   
             WebRequest request = WebRequest.Create(
-              "https://madnight.github.io/githut/gh-pull-request_56d080.json");
+              "https://madnight.github.io/githut/gh-pull-request_ed268f.json");
             // If required by the server, set the credentials.  
             request.Credentials = CredentialCache.DefaultCredentials;
 
@@ -395,6 +395,10 @@ namespace ProgrammingLanguageDevelopment
                     string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
                     stat.Year == record.Year);
                     stat.PopularitySurvey = missingData.PopularitySurvey;
+                    stat.StarsAmount = missingData.StarsAmount;
+                    stat.IssuesAmount = missingData.IssuesAmount;
+                    stat.PushAmount = missingData.PushAmount;
+                    stat.PublicationsAmount = missingData.PublicationsAmount;
                 }
                 //records from GH only:
                 var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
@@ -473,6 +477,10 @@ namespace ProgrammingLanguageDevelopment
                     string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
                     stat.Year == record.Year);
                     stat.PopularitySurvey = missingData.PopularitySurvey;
+                    stat.PullRequestsAmount = missingData.PullRequestsAmount;
+                    stat.IssuesAmount = missingData.IssuesAmount;
+                    stat.PushAmount = missingData.PushAmount;
+                    stat.PublicationsAmount = missingData.PublicationsAmount;
                 }
                 //records from GH only:
                 var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
@@ -551,6 +559,10 @@ namespace ProgrammingLanguageDevelopment
                     string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
                     stat.Year == record.Year);
                     stat.PopularitySurvey = missingData.PopularitySurvey;
+                    stat.PullRequestsAmount = missingData.PullRequestsAmount;
+                    stat.IssuesAmount = missingData.IssuesAmount;
+                    stat.StarsAmount = missingData.StarsAmount;
+                    stat.PublicationsAmount = missingData.PublicationsAmount;
                 }
                 //records from GH only:
                 var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
@@ -629,6 +641,10 @@ namespace ProgrammingLanguageDevelopment
                     string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
                     stat.Year == record.Year);
                     stat.PopularitySurvey = missingData.PopularitySurvey;
+                    stat.PullRequestsAmount = missingData.PullRequestsAmount;
+                    stat.StarsAmount = missingData.StarsAmount;
+                    stat.PushAmount = missingData.PushAmount;
+                    stat.PublicationsAmount = missingData.PublicationsAmount;
                 }
                 //records from GH only:
                 var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
@@ -665,7 +681,7 @@ namespace ProgrammingLanguageDevelopment
                     if (matches.Count > 0) name_of_language = matches.First().Value;
                 }
 
-                for (var year = 2015; year <= DateTime.Today.Year; year++)
+                for (var year = 2012; year <= DateTime.Today.Year; year++)
                 {
                     int amount_of_books = 0;
                     var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1=" + name_of_language + "&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");

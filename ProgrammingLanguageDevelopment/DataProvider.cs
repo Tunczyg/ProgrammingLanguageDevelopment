@@ -53,6 +53,6 @@ namespace ProgrammingLanguageDevelopment
 
             return annualStatsSOGHBG;
         }
-        
+
     }
 }
