@@ -23,9 +23,9 @@ dates=cell2mat(dtab(:,2)); %daty
 A_1=cell2mat(dtab(:,3));
 B_1=cell2mat(dtab(:,4));
 C_1=cell2mat(dtab(:,5)); % Wybor odpowiednich znanych wartoœci
-A_2=Arimax_Prediction3(LanguageName,0.15,5,3,'Test1.jpg');
-B_2=Arimax_Prediction3(LanguageName,0.15,5,4,'Test2.jpg');
-C_2=Arimax_Prediction3(LanguageName,0.15,5,5,'Test3.jpg'); % Przewidywanie dla kolejnych wartosci
+A_2=Arimax_Prediction3(LanguageName,Factor,Horizont,3,'Test1.jpg');
+B_2=Arimax_Prediction3(LanguageName,Factor,Horizont,4,'Test2.jpg');
+C_2=Arimax_Prediction3(LanguageName,Factor,Horizont,5,'Test3.jpg'); % Przewidywanie dla kolejnych wartosci
 Data_1=PopularitySurvey_val*A_1+PullRequests_val*B_1+Publications_val*C_1; %Utworzenie Popularnosci dla znanych danych
 Data_2=PopularitySurvey_val*A_2(:,2)+PullRequests_val*B_2(:,2)+Publications_val*C_2(:,2); %Utworzonenie popularnosci 
 % dla przewidzianych danych
