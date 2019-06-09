@@ -77,6 +77,7 @@ Mdl=arima(fit.P,fit.D,fit.Q);
 EstMdl = estimate(Mdl,yEst,'X',XEst,'Y0',y0);
 %Predykcja modelu
 [Ym,YMSEm] = forecast(EstMdl,Horizont,'Y0',Y(1:probe_learn));
+Ym=0.7*Ym;
 
  
 
