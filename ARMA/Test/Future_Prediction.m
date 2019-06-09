@@ -28,11 +28,19 @@ B_2=Arimax_Prediction3(LanguageName,Factor,Horizont,4,'Test2.jpg');
 C_2=Arimax_Prediction3(LanguageName,Factor,Horizont,5,'Test3.jpg'); % Przewidywanie dla kolejnych wartosci
 Data_1=PopularitySurvey_val*A_1+PullRequests_val*B_1+Publications_val*C_1; %Utworzenie Popularnosci dla znanych danych
 Data_2=PopularitySurvey_val*A_2(:,2)+PullRequests_val*B_2(:,2)+Publications_val*C_2(:,2); %Utworzonenie popularnosci 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+size_series = size(Data_1,1);
+% Factor = 0.15;
+probe_learn = ceil(size_series * (1-Factor))
+delta=Data_1(probe_learn)-Data_2(1);
+
+dates_2=[A_2(2:end,1);max(A_2(:,1))+1];
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
 % dla przewidzianych danych
 a=figure('visible','off');
 h1=plot(dates,Data_1,'-b*');
 hold on;
-h2=plot(A_2(:,1),Data_2,'-r*');
+h2=plot(dates_2,Data_2+delta,'-r*');
 legend([h1 h2],{'Data','Prediction'},'location','northwest')
 title(LanguageName);
 grid on;
