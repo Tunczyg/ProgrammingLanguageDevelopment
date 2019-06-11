@@ -6,7 +6,7 @@ function[]=Future_Prediction(LanguageName,Factor,Horizont,Name,PopularitySurvey_
  % Horizont - horyzont do przewidywania- ile lat do przodu
  % Name - Nazwa pliku do którego zostanie zapisany wykres wyjœæiow
  % PopularitySurvey_val - Wsp_1
- % PullRequests_val -  Wsp_2
+ % PullRequests_val -  Wsp_5
  %  Publications_val - Wsp_2
  %
  %

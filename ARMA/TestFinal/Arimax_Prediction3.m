@@ -96,14 +96,14 @@ yEst = Y(2:T);
 XEst = X(2:end,:);
 Beta0 = [0.5 0.5 0.5 0.5];
 %Dobranie parametrów
-[p, d, q, bic, aic, fit,EstParamCov,logL,info ] = fit_arimax_model( Y,probe_learn, probe_tests )
+[p, d, q, bic, aic, fit,EstParamCov,logL,info ] = fit_arimax_model( Y,probe_learn, probe_tests );
 %Utworzenir modelu
 Mdl=arima(fit.P,fit.D,fit.Q);
 % Estymowanie modelu
 % y0 = Y(1:fit.P+1);
  y0=[Y(size_series-3);Y(size_series-2);Y(size_series-1);Y(size_series)];
 %y0 = y0';
-EstMdl = estimate(Mdl,yEst,'X',XEst,'Y0',y0);
+EstMdl = estimate(fit,yEst,'X',XEst,'Y0',y0);
 %Predykcja modelu
 [Ym,YMSEm] = forecast(EstMdl,Horizont,'Y0',Y(1:probe_learn));
 Ym=0.7*Ym;
@@ -125,6 +125,6 @@ h3 = plot(dates(probe_learn:size_series),Y(probe_learn:size_series),'-*g','LineW
 legend([h1 h2 h3],'Probe learn','Prediction','Probe tests','location','northwest');
 saveas(a,Name);
 grid on;
-Future=[dates_2 Ym]
+Future=[dates_2 Ym];
 
  end
