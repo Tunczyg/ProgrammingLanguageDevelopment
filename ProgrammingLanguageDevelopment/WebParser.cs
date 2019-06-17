@@ -14,6 +14,12 @@ namespace ProgrammingLanguageDevelopment
 {
     class WebParser
     {
+        public int y_ear;
+
+        public WebParser(int year)
+        {
+            y_ear = year;
+        }
         public List<ProgrammingLanguage> GetDataFromComputerScienceWeb(List<ProgrammingLanguage> ExistingLanguages)
         {
 
@@ -73,13 +79,13 @@ namespace ProgrammingLanguageDevelopment
                                 if (!(exist._Paradigm.Any(item => item == para_enum)))
                                     exist._Paradigm.Add(para_enum);
                             }
-                            
+
                             //typing
                             Regex rgx3 = new Regex(@"static|dynamic");
                             MatchCollection matchesColl3 = rgx3.Matches(language.InnerText);
                             var matches3 = matchesColl3.Cast<Match>().ToList();
                             if (matches3.Count > 0)
-                            { 
+                            {
                                 typing = matches3.Last().Value.ToLower();
                                 typing = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(typing);
                                 ProgrammingLanguage.Typing type_enum;
@@ -106,7 +112,7 @@ namespace ProgrammingLanguageDevelopment
 
                         }
                     }
-                }        
+                }
 
             }
             return ExistingLanguages;
@@ -156,7 +162,7 @@ namespace ProgrammingLanguageDevelopment
                             where caption.Attributes["class"] != null && caption.Attributes["class"].Value == "summary"
                             select caption;
 
-                if (names.Count() == 0 || names.Last() == null)  continue;                
+                if (names.Count() == 0 || names.Last() == null) continue;
                 var name = names.Last().InnerText;
 
                 var rgx = new Regex(@"(?<=First&#160;appeared</th><td>)(.*?)(?=<)");
@@ -245,7 +251,7 @@ namespace ProgrammingLanguageDevelopment
         {
             var statData = new List<AnnualStatisticData>();
 
-            for (var year = 2015; year <= DateTime.Today.Year; year++)
+            for (var year = 2015; year <= 2015; year++)
             {
                 var html = GetRawSourceCode("https://insights.stackoverflow.com/survey/" + year + "/");
                 var htmlDoc = new HtmlDocument();
@@ -257,8 +263,9 @@ namespace ProgrammingLanguageDevelopment
                     case 2015:
                         {
                             //in 2015 there are also records about 2013 and 2014
-                            searchingPhrase.Add("techLanguages-" + (year - 2));
-                            searchingPhrase.Add("techLanguages-" + (year - 1));
+                            //searchingPhrase.Add("techLanguages-" + (year - 2));
+                            //searchingPhrase.Add("techLanguages-" + (year - 1));
+                            year = y_ear;
                             searchingPhrase.Add("techLanguages-" + year);
                             break;
                         }
@@ -327,7 +334,13 @@ namespace ProgrammingLanguageDevelopment
                         if (searchingPhrase.Count > 1) year++;
                     }
                     statData.AddRange(annualData);
-                }                   
+
+                    var count2013_1 = statData.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //10
+                    var count2013_2 = statData.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//10
+                    var count2013_3 = statData.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //10
+                    var count2013_4 = statData.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //10
+                }
+                break;
             }
             return statData;
         }
@@ -337,7 +350,7 @@ namespace ProgrammingLanguageDevelopment
 
             // Create a request for the URL.   
             WebRequest request = WebRequest.Create(
-              "https://madnight.github.io/githut/gh-pull-request_56d080.json");
+              "https://madnight.github.io/githut/gh-pull-request_ed268f.json");
             // If required by the server, set the credentials.  
             request.Credentials = CredentialCache.DefaultCredentials;
 
@@ -353,7 +366,7 @@ namespace ProgrammingLanguageDevelopment
                 // Open the stream using a StreamReader for easy access.  
                 StreamReader reader = new StreamReader(dataStream);
                 // Read the content.  
-                
+
                 var responseFromServer = reader.ReadToEnd().Replace("}\n{", "},\n{").Replace("}\r\n{", "},\n{");
                 var jsonResponseFormat = "{\"items\": [\n" + responseFromServer + "\n]}";
                 var jsons = JObject.Parse(jsonResponseFormat).SelectToken("items");
@@ -368,45 +381,46 @@ namespace ProgrammingLanguageDevelopment
 
                     var newRecord = new AnnualStatisticData(name, int.Parse(year), int.Parse(quarter));
                     newRecord.PullRequestsAmount = int.Parse(count);
-                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year))
+                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year && rec.Quarter == newRecord.Quarter))
                         continue;
-                    statsGH.Add(newRecord);
+                    if (year == y_ear.ToString())
+                        statsGH.Add(newRecord);
                 }
 
                 //selecting only requested languages
-                var requestedStats = statsGH.Where(record => 
-                    RequestedLanguages.Any(language => 
+                var requestedStats = statsGH.Where(record =>
+                    RequestedLanguages.Any(language =>
                     string.Equals(language.Name, record.LanguageName, StringComparison.CurrentCultureIgnoreCase)))
-                    .ToList();
-                //extract stats consistent with existing stats
-                var existingStatsDuplicates = requestedStats.Where(record => ExistingStats.Any(item =>
-                    string.Equals(item.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    item.Year == record.Year))
-                    .ToList();
-                //and those non consistent
-                var existingStatsNonDuplicates = ExistingStats.Where(record =>
-                    existingStatsDuplicates.Any(item =>
-                    item == record)).ToList();
+                    .ToList(); //115
+
+                var count2013_1a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //26
+                var count2013_2a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//28
+                var count2013_3a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //31
+                var count2013_4a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //30
 
                 //complete duplicated stats
-                foreach (var stat in existingStatsDuplicates)
+                foreach (var stat in requestedStats)
                 {
-                    var missingData = ExistingStats.FirstOrDefault(record => 
-                    string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    stat.Year == record.Year);
-                    stat.PopularitySurvey = missingData.PopularitySurvey;
+                    var duplicate = ExistingStats.FirstOrDefault(item =>
+                    string.Equals(item.LanguageName, stat.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    item.Year == stat.Year &&
+                    item.Quarter == stat.Quarter);
+                    if (duplicate == null) //add if we dont have it yet
+                        ExistingStats.Add(stat);
+                    else //we have such record, need only to add new data to one filed
+                    {
+                        duplicate.PullRequestsAmount = stat.PullRequestsAmount;
+                    }
                 }
-                //records from GH only:
-                var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
 
-                //add to the returned result
-                statData.AddRange(existingStatsDuplicates);
-                statData.AddRange(existingStatsNonDuplicates);
-                statData.AddRange(ghOnly);
+                var count2013_1 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //27
+                var count2013_2 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//29
+                var count2013_3 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //32
+                var count2013_4 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //31
             }
             // Close the response.  
-            response.Close();            
-            return statData;
+            response.Close();
+            return ExistingStats;
         }
 
         public List<AnnualStatisticData> GetStarsFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
@@ -446,45 +460,47 @@ namespace ProgrammingLanguageDevelopment
 
                     var newRecord = new AnnualStatisticData(name, int.Parse(year), int.Parse(quarter));
                     newRecord.StarsAmount = int.Parse(count);
-                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year))
+                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year && rec.Quarter == newRecord.Quarter))
                         continue;
-                    statsGH.Add(newRecord);
+                    if (year == y_ear.ToString())
+                        statsGH.Add(newRecord);
                 }
 
                 //selecting only requested languages
                 var requestedStats = statsGH.Where(record =>
                     RequestedLanguages.Any(language =>
                     string.Equals(language.Name, record.LanguageName, StringComparison.CurrentCultureIgnoreCase)))
-                    .ToList();
-                //extract stats consistent with existing stats
-                var existingStatsDuplicates = requestedStats.Where(record => ExistingStats.Any(item =>
-                    string.Equals(item.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    item.Year == record.Year))
-                    .ToList();
-                //and those non consistent
-                var existingStatsNonDuplicates = ExistingStats.Where(record =>
-                    existingStatsDuplicates.Any(item =>
-                    item == record)).ToList();
+                    .ToList(); //34
+
+
+                var count2013_1a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //32
+                var count2013_2a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//34
+                var count2013_3a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //33
+                var count2013_4a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //37
 
                 //complete duplicated stats
-                foreach (var stat in existingStatsDuplicates)
+                foreach (var stat in requestedStats)
                 {
-                    var missingData = ExistingStats.FirstOrDefault(record =>
-                    string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    stat.Year == record.Year);
-                    stat.PopularitySurvey = missingData.PopularitySurvey;
+                    var duplicate = ExistingStats.FirstOrDefault(item =>
+                    string.Equals(item.LanguageName, stat.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    item.Year == stat.Year &&
+                    item.Quarter == stat.Quarter);
+                    if (duplicate == null) //add if we dont have it yet
+                        ExistingStats.Add(stat);
+                    else //we have such record, need only to add new data to one filed
+                    {
+                        duplicate.StarsAmount = stat.StarsAmount;
+                    }
                 }
-                //records from GH only:
-                var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
 
-                //add to the returned result
-                statData.AddRange(existingStatsDuplicates);
-                statData.AddRange(existingStatsNonDuplicates);
-                statData.AddRange(ghOnly);
+                var count2013_1 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //32
+                var count2013_2 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//1
+                var count2013_3 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //7
+                var count2013_4 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //4
             }
             // Close the response.  
             response.Close();
-            return statData;
+            return ExistingStats;
         }
 
         public List<AnnualStatisticData> GetPushesFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
@@ -524,45 +540,44 @@ namespace ProgrammingLanguageDevelopment
 
                     var newRecord = new AnnualStatisticData(name, int.Parse(year), int.Parse(quarter));
                     newRecord.PushAmount = int.Parse(count);
-                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year))
+                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year && rec.Quarter == newRecord.Quarter))
                         continue;
-                    statsGH.Add(newRecord);
-                }
-
-                //selecting only requested languages
+                    if (year == y_ear.ToString())
+                        statsGH.Add(newRecord);
+                }//selecting only requested languages
                 var requestedStats = statsGH.Where(record =>
                     RequestedLanguages.Any(language =>
                     string.Equals(language.Name, record.LanguageName, StringComparison.CurrentCultureIgnoreCase)))
-                    .ToList();
-                //extract stats consistent with existing stats
-                var existingStatsDuplicates = requestedStats.Where(record => ExistingStats.Any(item =>
-                    string.Equals(item.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    item.Year == record.Year))
-                    .ToList();
-                //and those non consistent
-                var existingStatsNonDuplicates = ExistingStats.Where(record =>
-                    existingStatsDuplicates.Any(item =>
-                    item == record)).ToList();
+                    .ToList(); //34
+
+                var count2013_1a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //26
+                var count2013_2a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//28
+                var count2013_3a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //31
+                var count2013_4a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //30
 
                 //complete duplicated stats
-                foreach (var stat in existingStatsDuplicates)
+                foreach (var stat in requestedStats)
                 {
-                    var missingData = ExistingStats.FirstOrDefault(record =>
-                    string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    stat.Year == record.Year);
-                    stat.PopularitySurvey = missingData.PopularitySurvey;
+                    var duplicate = ExistingStats.FirstOrDefault(item =>
+                    string.Equals(item.LanguageName, stat.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    item.Year == stat.Year &&
+                    item.Quarter == stat.Quarter);
+                    if (duplicate == null) //add if we dont have it yet
+                        ExistingStats.Add(stat);
+                    else //we have such record, need only to add new data to one filed
+                    {
+                        duplicate.PushAmount = stat.PushAmount;
+                    }
                 }
-                //records from GH only:
-                var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
 
-                //add to the returned result
-                statData.AddRange(existingStatsDuplicates);
-                statData.AddRange(existingStatsNonDuplicates);
-                statData.AddRange(ghOnly);
+                var count2013_1 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //32
+                var count2013_2 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//1
+                var count2013_3 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //7
+                var count2013_4 = ExistingStats.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //4
             }
             // Close the response.  
             response.Close();
-            return statData;
+            return ExistingStats;
         }
 
         public List<AnnualStatisticData> GetIssuesFromGitHubWeb(List<ProgrammingLanguage> RequestedLanguages, List<AnnualStatisticData> ExistingStats)
@@ -602,45 +617,45 @@ namespace ProgrammingLanguageDevelopment
 
                     var newRecord = new AnnualStatisticData(name, int.Parse(year), int.Parse(quarter));
                     newRecord.IssuesAmount = int.Parse(count);
-                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year))
+                    if (statsGH.Any(rec => rec.LanguageName == newRecord.LanguageName && rec.Year == newRecord.Year && rec.Quarter == newRecord.Quarter))
                         continue;
-                    statsGH.Add(newRecord);
+                    if (year == y_ear.ToString())
+                        statsGH.Add(newRecord);
                 }
-
                 //selecting only requested languages
                 var requestedStats = statsGH.Where(record =>
                     RequestedLanguages.Any(language =>
                     string.Equals(language.Name, record.LanguageName, StringComparison.CurrentCultureIgnoreCase)))
-                    .ToList();
-                //extract stats consistent with existing stats
-                var existingStatsDuplicates = requestedStats.Where(record => ExistingStats.Any(item =>
-                    string.Equals(item.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    item.Year == record.Year))
-                    .ToList();
-                //and those non consistent
-                var existingStatsNonDuplicates = ExistingStats.Where(record =>
-                    existingStatsDuplicates.Any(item =>
-                    item == record)).ToList();
+                    .ToList(); //34
+
+                var count2013_1a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //26
+                var count2013_2a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//28
+                var count2013_3a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //31
+                var count2013_4a = requestedStats.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //30
 
                 //complete duplicated stats
-                foreach (var stat in existingStatsDuplicates)
+                foreach (var stat in requestedStats)
                 {
-                    var missingData = ExistingStats.FirstOrDefault(record =>
-                    string.Equals(stat.LanguageName, record.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
-                    stat.Year == record.Year);
-                    stat.PopularitySurvey = missingData.PopularitySurvey;
+                    var duplicate = ExistingStats.FirstOrDefault(item =>
+                    string.Equals(item.LanguageName, stat.LanguageName, StringComparison.CurrentCultureIgnoreCase) &&
+                    item.Year == stat.Year &&
+                    item.Quarter == stat.Quarter);
+                    if (duplicate == null) //add if we dont have it yet
+                        ExistingStats.Add(stat);
+                    else //we have such record, need only to add new data to one filed
+                    {
+                        duplicate.IssuesAmount = stat.IssuesAmount;
+                    }
                 }
-                //records from GH only:
-                var ghOnly = requestedStats.Where(stat1 => !existingStatsDuplicates.Any(stat2 => stat1 == stat2));
 
-                //add to the returned result
-                statData.AddRange(existingStatsDuplicates);
-                statData.AddRange(existingStatsNonDuplicates);
-                statData.AddRange(ghOnly);
+                var count2013_1 = statData.Where(e => e.Year == 2013 && e.Quarter == 1).ToList(); //32
+                var count2013_2 = statData.Where(e => e.Year == 2013 && e.Quarter == 2).ToList();//1
+                var count2013_3 = statData.Where(e => e.Year == 2013 && e.Quarter == 3).ToList(); //7
+                var count2013_4 = statData.Where(e => e.Year == 2013 && e.Quarter == 4).ToList(); //4
             }
             // Close the response.  
             response.Close();
-            return statData;
+            return ExistingStats;
         }
 
         public List<AnnualStatisticData> GetDataFromBG(List<AnnualStatisticData> ExistingStats)
@@ -665,7 +680,7 @@ namespace ProgrammingLanguageDevelopment
                     if (matches.Count > 0) name_of_language = matches.First().Value;
                 }
 
-                for (var year = 2015; year <= DateTime.Today.Year; year++)
+                for (var year = y_ear; year <= y_ear; year++)
                 {
                     int amount_of_books = 0;
                     var html = GetRawSourceCode("https://katalogagh.cyfronet.pl/search/query?match_1=PHRASE&field_1&term_1=" + name_of_language + "&facet_date=1.201." + year + "&sort=dateNewest&theme=bgagh");
@@ -696,7 +711,7 @@ namespace ProgrammingLanguageDevelopment
                     if (existingRecords != null)
                         foreach (var exRec in existingRecords)
                             exRec.PublicationsAmount = amount_of_books / 4;
-                }                
+                }
             }
             return ExistingStats;
         }

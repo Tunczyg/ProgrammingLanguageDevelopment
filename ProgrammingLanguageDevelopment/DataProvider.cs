@@ -32,18 +32,18 @@ namespace ProgrammingLanguageDevelopment
             };
         }
 
-        public List<ProgrammingLanguage> GetLanguageFeaturesDynamicData()
+        public List<ProgrammingLanguage> GetLanguageFeaturesDynamicData(int year)
         {
-            var parser = new WebParser();
+            var parser = new WebParser(year);
             var wikiLang = parser.GetDataFromWikipedia();
             var langData = parser.GetDataFromComputerScienceWeb(wikiLang);
 
             return langData;
         }
 
-        public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages)
+        public List<AnnualStatisticData> GetAnnualStatistics(List<ProgrammingLanguage> requestedLanguages, int year)
         {
-            var parser = new WebParser();
+            var parser = new WebParser(year);
             var annualStatsSO = parser.GetDataFromStackOverflowWeb(requestedLanguages);
             var annualStatsSOGH1 = parser.GetPullRequestsFromGitHubWeb(requestedLanguages, annualStatsSO);
             var annualStatsSOGH2 = parser.GetStarsFromGitHubWeb(requestedLanguages, annualStatsSOGH1);
@@ -53,6 +53,6 @@ namespace ProgrammingLanguageDevelopment
 
             return annualStatsSOGHBG;
         }
-        
+
     }
 }
