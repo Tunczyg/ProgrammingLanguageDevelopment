@@ -13,6 +13,11 @@ namespace ProgrammingLanguageDevelopment
         static void Main(string[] args)
         {
             var dataProvider = new DataProvider();
+            Console.WriteLine(@"Witamy w programie pobieraj¹cym dane do symulacji rozwoju jêzyków programowania.");
+            Console.WriteLine(@"Czas pobierania danych zale¿y bezpoœrednio od szybkoœci Twojego ³¹cza internetowego");
+            Console.WriteLine(@"dlatego przed kontynuacj¹ prosimy o upewnienie siê czy posiadasz wydajne po³¹czenie.");
+            Console.WriteLine(@"Aby kontynuowaæ naciœnij dowolny klawisz.");
+            Console.ReadKey();
             for (var year = 2012; year < DateTime.Today.Year; year++)
             {
                 Console.WriteLine(@"Proszê czekaæ... Trwa pobieranie danych z roku " + year.ToString() + ".");
