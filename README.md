@@ -41,7 +41,7 @@ Używany jest model ARIMAX, który tworzony jest z modelu ARIMA. Jego najważnie
     • D-  dla ARMAX – parametr od różniczkowania (najczęściej 1)- stopień szeregu.
  
 Wyniki symulacji znajdują się na dysku pod linkiem:  
-https://drive.google.com/drive/folders/1CxKgl_cDAy4KncA8YitUkL3ghvWc1xqO?fbclid=IwAR177hFU3AGVJ_-MZEam-7ST64HCSQWmRxb6k8YbYGh2XIzIH08H2jlf1mM
+https://drive.google.com/drive/folders/1CxKgl_cDAy4KncA8YitUkL3ghvWc1xqO?usp=sharing
 
 Zestawienie wyników oraz wnioski zostają przedstawione w poniższej tabeli:  
 ![alt text](https://github.com/Tunczyg/ProgrammingLanguageDevelopment/blob/MatlabReference/EconomicStatData/Tabela.png)
