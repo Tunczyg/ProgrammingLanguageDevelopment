@@ -3,8 +3,8 @@
 **Cel projektu:**  
   
 Będąc studentami trzeciego roku stajemy przed wyborem praktyk studenckich, których zaliczenie jest obowiązkowe do września bieżącego roku. Aby pomóc naszym kolegom świadomie wybrać kierunek zatrudnienia postanowiliśmy zaprognozować rozwój języków programowania w kolejnych kwartałach. Do analizy użyto danych ze stron internatowych o charakterze programistycznym, ekonomicznym oraz ogólnonaukowym. Z uwagi na fakt, że dane wcześniejsze niż rok 2012 są niedostępne lub szczątkowe, ograniczono punkty pomiarowe do cokwartalnych statystyk od Q1 2012 do Q2 2019, co daje 30 punktów pomiarowych. Horyzont symulacji to 8 punktów pomiarowych, z czego dla wskazania poprawności algorytmu 6 należy do zbioru testowego.  
-Prezentację multimedialną z projektu można znaleźć pod adresem: https://prezi.com/p/0tajwqeqtza5/copy-of-copy-of-rozwoj-jezykow-programowania/
-
+Prezentację multimedialną z projektu można znaleźć pod adresem: https://prezi.com/view/CnkxSZ50TUMLKpZLVS30/
+  
 **Opis aplikacji:**  
   
 Cała aplikacja jako wersja developerska służąca symulacji korzysta zarówno ze środowiska Visual Studio, jak i Matlab. Z tego powodu, że nie każdy użytkownik posiada w tym samym systemie operacyjnym oba te programy w dokumentacji prezentujemy wersję uproszczoną, której można używać nawet posiadając te dwa środowiska na oddzielnych urządzeniach.  
