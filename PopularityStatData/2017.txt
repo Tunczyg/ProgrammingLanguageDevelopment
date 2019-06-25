@@ -1,0 +1,540 @@
+{"LanguageName":"JavaScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":383738,"PushAmount":1298908,"StarsAmount":1027412,"IssuesAmount":327032,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":229442,"PushAmount":875496,"StarsAmount":385523,"IssuesAmount":180862,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":149556,"PushAmount":689919,"StarsAmount":394163,"IssuesAmount":181956,"PublicationsAmount":2}
+{"LanguageName":"PHP","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":110171,"PushAmount":477564,"StarsAmount":137564,"IssuesAmount":101154,"PublicationsAmount":1}
+{"LanguageName":"Ruby","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":97534,"PushAmount":249381,"StarsAmount":106502,"IssuesAmount":54218,"PublicationsAmount":0}
+{"LanguageName":"Go","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":90068,"PushAmount":224510,"StarsAmount":245727,"IssuesAmount":81566,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":84767,"PushAmount":472402,"StarsAmount":172546,"IssuesAmount":81859,"PublicationsAmount":0}
+{"LanguageName":"C#","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":60393,"PushAmount":281031,"StarsAmount":84226,"IssuesAmount":70911,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":50041,"PushAmount":288536,"StarsAmount":132963,"IssuesAmount":50531,"PublicationsAmount":265}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":42166,"PushAmount":126574,"StarsAmount":63257,"IssuesAmount":57532,"PublicationsAmount":0}
+{"LanguageName":"Scala","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":21270,"PushAmount":63986,"StarsAmount":22185,"IssuesAmount":14527,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":17912,"PushAmount":70112,"StarsAmount":145774,"IssuesAmount":17818,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":14494,"PushAmount":45505,"StarsAmount":34072,"IssuesAmount":12395,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":13559,"PushAmount":55804,"StarsAmount":114042,"IssuesAmount":18164,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":11273,"PushAmount":26916,"StarsAmount":23687,"IssuesAmount":11635,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":6779,"PushAmount":37669,"StarsAmount":17702,"IssuesAmount":8184,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":5977,"PushAmount":39499,"StarsAmount":15216,"IssuesAmount":6628,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":5878,"PushAmount":30742,"StarsAmount":7326,"IssuesAmount":5322,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4792,"PushAmount":14525,"StarsAmount":11980,"IssuesAmount":3691,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4493,"PushAmount":17628,"StarsAmount":5323,"IssuesAmount":3303,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4363,"PushAmount":19075,"StarsAmount":5465,"IssuesAmount":3373,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4001,"PushAmount":11343,"StarsAmount":2372,"IssuesAmount":2753,"PublicationsAmount":1}
+{"LanguageName":"OCaml","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":3775,"PushAmount":13611,"StarsAmount":4727,"IssuesAmount":3101,"PublicationsAmount":0}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":2817,"PushAmount":8185,"StarsAmount":677,"IssuesAmount":1008,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":2772,"PushAmount":15186,"StarsAmount":6098,"IssuesAmount":3977,"PublicationsAmount":0}
+{"LanguageName":"Dart","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":2194,"PushAmount":4892,"StarsAmount":1220,"IssuesAmount":1703,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1883,"PushAmount":12561,"StarsAmount":6142,"IssuesAmount":2493,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1590,"PushAmount":14927,"StarsAmount":2792,"IssuesAmount":1450,"PublicationsAmount":3}
+{"LanguageName":"F#","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1335,"PushAmount":6373,"StarsAmount":1872,"IssuesAmount":1319,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1038,"PushAmount":161,"StarsAmount":206,"IssuesAmount":597,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":893,"PushAmount":4310,"StarsAmount":2635,"IssuesAmount":1094,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":529,"PushAmount":2957,"StarsAmount":927,"IssuesAmount":882,"PublicationsAmount":0}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":523,"PushAmount":4121,"StarsAmount":1429,"IssuesAmount":524,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":516,"PushAmount":2175,"StarsAmount":1596,"IssuesAmount":389,"PublicationsAmount":0}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":336,"PushAmount":1237,"StarsAmount":138,"IssuesAmount":196,"PublicationsAmount":0}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":295,"PushAmount":1646,"StarsAmount":169,"IssuesAmount":565,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":269,"PushAmount":891,"StarsAmount":142,"IssuesAmount":231,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":221,"PushAmount":1041,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":212,"PushAmount":3579,"StarsAmount":1466,"IssuesAmount":827,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":197,"PushAmount":1392,"StarsAmount":194,"IssuesAmount":144,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":197,"PushAmount":1263,"StarsAmount":254,"IssuesAmount":172,"PublicationsAmount":1}
+{"LanguageName":"Racket","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":186,"PushAmount":1354,"StarsAmount":252,"IssuesAmount":203,"PublicationsAmount":0}
+{"LanguageName":"Component Pascal","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":116,"PushAmount":429,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"JavaScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":422653,"PushAmount":1627909,"StarsAmount":1083797,"IssuesAmount":354470,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":264327,"PushAmount":1073692,"StarsAmount":455265,"IssuesAmount":192622,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":178148,"PushAmount":883417,"StarsAmount":436308,"IssuesAmount":195843,"PublicationsAmount":2}
+{"LanguageName":"PHP","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":115413,"PushAmount":514150,"StarsAmount":137511,"IssuesAmount":104572,"PublicationsAmount":1}
+{"LanguageName":"Ruby","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":113309,"PushAmount":271948,"StarsAmount":114171,"IssuesAmount":52950,"PublicationsAmount":0}
+{"LanguageName":"Go","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":102468,"PushAmount":284152,"StarsAmount":250662,"IssuesAmount":77793,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":98572,"PushAmount":529239,"StarsAmount":174990,"IssuesAmount":89957,"PublicationsAmount":0}
+{"LanguageName":"C#","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":66193,"PushAmount":485316,"StarsAmount":89488,"IssuesAmount":73647,"PublicationsAmount":0}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":57093,"PushAmount":177992,"StarsAmount":81656,"IssuesAmount":73380,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":51213,"PushAmount":305202,"StarsAmount":129340,"IssuesAmount":49965,"PublicationsAmount":265}
+{"LanguageName":"Scala","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":24444,"PushAmount":82459,"StarsAmount":22355,"IssuesAmount":14356,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":20560,"PushAmount":85365,"StarsAmount":151346,"IssuesAmount":19223,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":17723,"PushAmount":59220,"StarsAmount":33516,"IssuesAmount":13618,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":13980,"PushAmount":68469,"StarsAmount":112618,"IssuesAmount":17091,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":8910,"PushAmount":21465,"StarsAmount":19783,"IssuesAmount":10463,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":6678,"PushAmount":41459,"StarsAmount":16640,"IssuesAmount":7190,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":6533,"PushAmount":41365,"StarsAmount":16229,"IssuesAmount":9340,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":5707,"PushAmount":31925,"StarsAmount":6342,"IssuesAmount":4912,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":5541,"PushAmount":17752,"StarsAmount":10012,"IssuesAmount":4687,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":5385,"PushAmount":22656,"StarsAmount":7949,"IssuesAmount":3781,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4786,"PushAmount":22303,"StarsAmount":5711,"IssuesAmount":3839,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4608,"PushAmount":27989,"StarsAmount":17537,"IssuesAmount":5502,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4279,"PushAmount":11714,"StarsAmount":2393,"IssuesAmount":2450,"PublicationsAmount":1}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4187,"PushAmount":12551,"StarsAmount":847,"IssuesAmount":1345,"PublicationsAmount":0}
+{"LanguageName":"OCaml","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":3822,"PushAmount":15052,"StarsAmount":5414,"IssuesAmount":2771,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":2315,"PushAmount":15752,"StarsAmount":6533,"IssuesAmount":3087,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":2176,"PushAmount":20993,"StarsAmount":3598,"IssuesAmount":1767,"PublicationsAmount":3}
+{"LanguageName":"Dart","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":2111,"PushAmount":6041,"StarsAmount":1263,"IssuesAmount":1442,"PublicationsAmount":0}
+{"LanguageName":"F#","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":1604,"PushAmount":6218,"StarsAmount":1685,"IssuesAmount":1665,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":1179,"PushAmount":5764,"StarsAmount":3398,"IssuesAmount":1112,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":1032,"PushAmount":6232,"StarsAmount":147,"IssuesAmount":633,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":814,"PushAmount":3233,"StarsAmount":1939,"IssuesAmount":699,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":693,"PushAmount":3730,"StarsAmount":710,"IssuesAmount":614,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":666,"PushAmount":4160,"StarsAmount":1781,"IssuesAmount":2000,"PublicationsAmount":0}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":405,"PushAmount":2180,"StarsAmount":159,"IssuesAmount":482,"PublicationsAmount":0}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":362,"PushAmount":4914,"StarsAmount":1473,"IssuesAmount":559,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":292,"PushAmount":1934,"StarsAmount":471,"IssuesAmount":234,"PublicationsAmount":1}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":219,"PushAmount":878,"StarsAmount":165,"IssuesAmount":102,"PublicationsAmount":0}
+{"LanguageName":"Racket","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":216,"PushAmount":2266,"StarsAmount":393,"IssuesAmount":221,"PublicationsAmount":0}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":120,"PushAmount":1709,"StarsAmount":626,"IssuesAmount":244,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":103,"PushAmount":1007,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":102,"PushAmount":1299,"StarsAmount":281,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"JavaScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":294029,"PushAmount":1044391,"StarsAmount":957893,"IssuesAmount":295326,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":207040,"PushAmount":648077,"StarsAmount":374534,"IssuesAmount":156513,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":133103,"PushAmount":512129,"StarsAmount":372886,"IssuesAmount":157680,"PublicationsAmount":2}
+{"LanguageName":"Ruby","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":91916,"PushAmount":184158,"StarsAmount":89830,"IssuesAmount":41048,"PublicationsAmount":0}
+{"LanguageName":"Go","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":90599,"PushAmount":185569,"StarsAmount":218061,"IssuesAmount":65991,"PublicationsAmount":1}
+{"LanguageName":"PHP","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":87687,"PushAmount":289324,"StarsAmount":125109,"IssuesAmount":85412,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":83184,"PushAmount":348685,"StarsAmount":165963,"IssuesAmount":80738,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":45938,"PushAmount":205403,"StarsAmount":118166,"IssuesAmount":44922,"PublicationsAmount":265}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":44131,"PushAmount":113325,"StarsAmount":78161,"IssuesAmount":62154,"PublicationsAmount":0}
+{"LanguageName":"C#","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":43188,"PushAmount":359590,"StarsAmount":81610,"IssuesAmount":56947,"PublicationsAmount":0}
+{"LanguageName":"Scala","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":20343,"PushAmount":60927,"StarsAmount":18821,"IssuesAmount":11891,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":14279,"PushAmount":40477,"StarsAmount":101258,"IssuesAmount":15284,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":14021,"PushAmount":34686,"StarsAmount":27704,"IssuesAmount":10895,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":10852,"PushAmount":34037,"StarsAmount":90851,"IssuesAmount":15350,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":6130,"PushAmount":12823,"StarsAmount":13983,"IssuesAmount":7320,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":5402,"PushAmount":23255,"StarsAmount":11256,"IssuesAmount":5682,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":5055,"PushAmount":13761,"StarsAmount":5155,"IssuesAmount":3362,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":5011,"PushAmount":24188,"StarsAmount":14991,"IssuesAmount":7314,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4964,"PushAmount":12615,"StarsAmount":6876,"IssuesAmount":3534,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4500,"PushAmount":9981,"StarsAmount":9113,"IssuesAmount":3562,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4407,"PushAmount":23369,"StarsAmount":5402,"IssuesAmount":3919,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4106,"PushAmount":17270,"StarsAmount":14302,"IssuesAmount":5262,"PublicationsAmount":0}
+{"LanguageName":"OCaml","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":3256,"PushAmount":10314,"StarsAmount":5164,"IssuesAmount":2933,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":3115,"PushAmount":8070,"StarsAmount":1975,"IssuesAmount":2304,"PublicationsAmount":1}
+{"LanguageName":"Dart","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1973,"PushAmount":5428,"StarsAmount":706,"IssuesAmount":988,"PublicationsAmount":0}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1964,"PushAmount":5562,"StarsAmount":673,"IssuesAmount":1068,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1839,"PushAmount":10866,"StarsAmount":6023,"IssuesAmount":2605,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1453,"PushAmount":10505,"StarsAmount":3274,"IssuesAmount":1210,"PublicationsAmount":3}
+{"LanguageName":"F#","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1370,"PushAmount":4023,"StarsAmount":1653,"IssuesAmount":1686,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":767,"PushAmount":2950,"StarsAmount":2363,"IssuesAmount":876,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":690,"PushAmount":4826,"StarsAmount":114,"IssuesAmount":599,"PublicationsAmount":0}
+{"LanguageName":"Perl 6","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":653,"PushAmount":3166,"StarsAmount":173,"IssuesAmount":652,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":502,"PushAmount":1417,"StarsAmount":1322,"IssuesAmount":456,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":499,"PushAmount":3068,"StarsAmount":1943,"IssuesAmount":1436,"PublicationsAmount":0}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":425,"PushAmount":1707,"StarsAmount":112,"IssuesAmount":347,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":351,"PushAmount":1686,"StarsAmount":703,"IssuesAmount":425,"PublicationsAmount":0}
+{"LanguageName":"Racket","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":298,"PushAmount":1422,"StarsAmount":298,"IssuesAmount":374,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":291,"PushAmount":1083,"StarsAmount":545,"IssuesAmount":234,"PublicationsAmount":1}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":217,"PushAmount":2578,"StarsAmount":1151,"IssuesAmount":384,"PublicationsAmount":0}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":178,"PushAmount":953,"StarsAmount":128,"IssuesAmount":129,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":129,"PushAmount":982,"StarsAmount":184,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"JavaScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":269903,"PushAmount":798657,"StarsAmount":897827,"IssuesAmount":257836,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":191596,"PushAmount":538498,"StarsAmount":387338,"IssuesAmount":147849,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":121744,"PushAmount":426210,"StarsAmount":338614,"IssuesAmount":143794,"PublicationsAmount":2}
+{"LanguageName":"Ruby","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":86499,"PushAmount":167115,"StarsAmount":84178,"IssuesAmount":35351,"PublicationsAmount":0}
+{"LanguageName":"PHP","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":84800,"PushAmount":241552,"StarsAmount":142193,"IssuesAmount":82034,"PublicationsAmount":1}
+{"LanguageName":"Go","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":82244,"PushAmount":142611,"StarsAmount":240569,"IssuesAmount":61354,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":80560,"PushAmount":306422,"StarsAmount":190321,"IssuesAmount":80443,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":45143,"PushAmount":176918,"StarsAmount":122980,"IssuesAmount":44123,"PublicationsAmount":265}
+{"LanguageName":"C#","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":41241,"PushAmount":296169,"StarsAmount":83878,"IssuesAmount":56181,"PublicationsAmount":0}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":40946,"PushAmount":89975,"StarsAmount":81851,"IssuesAmount":61393,"PublicationsAmount":0}
+{"LanguageName":"Scala","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":18150,"PushAmount":46768,"StarsAmount":19708,"IssuesAmount":9699,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":13562,"PushAmount":34060,"StarsAmount":98039,"IssuesAmount":14329,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":11911,"PushAmount":28105,"StarsAmount":32753,"IssuesAmount":9722,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":10242,"PushAmount":28174,"StarsAmount":79622,"IssuesAmount":14254,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":6445,"PushAmount":12777,"StarsAmount":13568,"IssuesAmount":6627,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4690,"PushAmount":17029,"StarsAmount":11518,"IssuesAmount":4941,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4670,"PushAmount":12632,"StarsAmount":5222,"IssuesAmount":3228,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4637,"PushAmount":16629,"StarsAmount":12185,"IssuesAmount":5370,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4429,"PushAmount":23279,"StarsAmount":5610,"IssuesAmount":3965,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4254,"PushAmount":16052,"StarsAmount":14546,"IssuesAmount":5463,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":3278,"PushAmount":5917,"StarsAmount":7493,"IssuesAmount":2129,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2844,"PushAmount":8077,"StarsAmount":6887,"IssuesAmount":3124,"PublicationsAmount":0}
+{"LanguageName":"OCaml","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2630,"PushAmount":9671,"StarsAmount":5451,"IssuesAmount":2814,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2507,"PushAmount":6178,"StarsAmount":2273,"IssuesAmount":1820,"PublicationsAmount":1}
+{"LanguageName":"Dart","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2286,"PushAmount":3879,"StarsAmount":837,"IssuesAmount":1291,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2252,"PushAmount":11204,"StarsAmount":5659,"IssuesAmount":2663,"PublicationsAmount":0}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":1368,"PushAmount":3937,"StarsAmount":718,"IssuesAmount":818,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":1205,"PushAmount":7882,"StarsAmount":3271,"IssuesAmount":1162,"PublicationsAmount":3}
+{"LanguageName":"F#","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":1077,"PushAmount":3258,"StarsAmount":1439,"IssuesAmount":1165,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":743,"PushAmount":1318,"StarsAmount":1615,"IssuesAmount":539,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":729,"PushAmount":3119,"StarsAmount":123,"IssuesAmount":456,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":533,"PushAmount":1677,"StarsAmount":2076,"IssuesAmount":548,"PublicationsAmount":0}
+{"LanguageName":"Perl 6","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":483,"PushAmount":2945,"StarsAmount":142,"IssuesAmount":558,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":444,"PushAmount":2984,"StarsAmount":1791,"IssuesAmount":1348,"PublicationsAmount":0}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":387,"PushAmount":2550,"StarsAmount":1240,"IssuesAmount":408,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":339,"PushAmount":1442,"StarsAmount":715,"IssuesAmount":467,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":304,"PushAmount":836,"StarsAmount":612,"IssuesAmount":236,"PublicationsAmount":1}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":284,"PushAmount":1683,"StarsAmount":128,"IssuesAmount":204,"PublicationsAmount":0}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":157,"PushAmount":675,"StarsAmount":176,"IssuesAmount":182,"PublicationsAmount":0}
+{"LanguageName":"Racket","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":143,"PushAmount":702,"StarsAmount":369,"IssuesAmount":140,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":139,"PushAmount":652,"StarsAmount":161,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":119,"PushAmount":183,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1616,"StarsAmount":696,"IssuesAmount":238,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":987,"StarsAmount":363,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":219,"StarsAmount":310,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":424,"StarsAmount":305,"IssuesAmount":315,"PublicationsAmount":76}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":132,"StarsAmount":293,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1117,"StarsAmount":258,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Idris","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":132,"StarsAmount":105,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1873,"StarsAmount":470,"IssuesAmount":185,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":475,"StarsAmount":359,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":161,"StarsAmount":294,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":310,"StarsAmount":249,"IssuesAmount":119,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":653,"StarsAmount":245,"IssuesAmount":453,"PublicationsAmount":76}
+{"LanguageName":"Idris","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":311,"StarsAmount":177,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":406,"StarsAmount":1054,"IssuesAmount":373,"PublicationsAmount":76}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1170,"StarsAmount":536,"IssuesAmount":120,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":728,"StarsAmount":410,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":305,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":273,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":130,"StarsAmount":231,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Idris","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":241,"StarsAmount":199,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1089,"StarsAmount":630,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":531,"StarsAmount":476,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":837,"StarsAmount":408,"IssuesAmount":135,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":177,"StarsAmount":361,"IssuesAmount":180,"PublicationsAmount":76}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":329,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":287,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"WebAssembly","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":275,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Idris","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":162,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1172,"StarsAmount":108,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":823,"StarsAmount":0,"IssuesAmount":605,"PublicationsAmount":0}
+{"LanguageName":"DIGITAL Command Language","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":465,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":375,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Pure Data","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":349,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":315,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ceylon","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":291,"StarsAmount":0,"IssuesAmount":116,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":270,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":259,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":257,"StarsAmount":0,"IssuesAmount":114,"PublicationsAmount":0}
+{"LanguageName":"X10","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":248,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":229,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Limbo","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":204,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"NetLogo","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":173,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Modelica","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":162,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"XQuery","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":153,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Agda","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":147,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":119,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Rebol","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":106,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1809,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":690,"StarsAmount":0,"IssuesAmount":377,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":605,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":515,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"DIGITAL Command Language","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":502,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":477,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":418,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ceylon","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":366,"StarsAmount":0,"IssuesAmount":125,"PublicationsAmount":0}
+{"LanguageName":"Pure Data","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":303,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"COBOL","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":285,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Limbo","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":242,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":226,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"X10","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":175,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Modelica","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":167,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"XQuery","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":158,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"APL","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":151,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"NetLogo","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":145,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":143,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Inform 7","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":142,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Agda","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":128,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":117,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Chapel","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":116,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Component Pascal","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":107,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Pike","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":103,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Io","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":101,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1059,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":688,"StarsAmount":0,"IssuesAmount":351,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":500,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Pure Data","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":436,"StarsAmount":0,"IssuesAmount":112,"PublicationsAmount":0}
+{"LanguageName":"Ceylon","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":342,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":286,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":283,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"XQuery","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":216,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":205,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"DIGITAL Command Language","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":198,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"WebAssembly","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":197,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":178,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Limbo","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":177,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":139,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":130,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":128,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Inform 7","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":115,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":491,"StarsAmount":0,"IssuesAmount":180,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":358,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":232,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":202,"StarsAmount":0,"IssuesAmount":134,"PublicationsAmount":0}
+{"LanguageName":"NetLogo","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":167,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Component Pascal","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":157,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":140,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":134,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":127,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"COBOL","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":118,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Arc","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":104,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Clean","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":103,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":100,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"JavaScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":383738,"PushAmount":1298908,"StarsAmount":1027412,"IssuesAmount":327032,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":229442,"PushAmount":875496,"StarsAmount":385523,"IssuesAmount":180862,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":149556,"PushAmount":689919,"StarsAmount":394163,"IssuesAmount":181956,"PublicationsAmount":2}
+{"LanguageName":"PHP","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":110171,"PushAmount":477564,"StarsAmount":137564,"IssuesAmount":101154,"PublicationsAmount":1}
+{"LanguageName":"Ruby","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":97534,"PushAmount":249381,"StarsAmount":106502,"IssuesAmount":54218,"PublicationsAmount":0}
+{"LanguageName":"Go","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":90068,"PushAmount":224510,"StarsAmount":245727,"IssuesAmount":81566,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":84767,"PushAmount":472402,"StarsAmount":172546,"IssuesAmount":81859,"PublicationsAmount":0}
+{"LanguageName":"C#","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":60393,"PushAmount":281031,"StarsAmount":84226,"IssuesAmount":70911,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":50041,"PushAmount":288536,"StarsAmount":132963,"IssuesAmount":50531,"PublicationsAmount":265}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":42166,"PushAmount":126574,"StarsAmount":63257,"IssuesAmount":57532,"PublicationsAmount":0}
+{"LanguageName":"Scala","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":21270,"PushAmount":63986,"StarsAmount":22185,"IssuesAmount":14527,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":17912,"PushAmount":70112,"StarsAmount":145774,"IssuesAmount":17818,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":14494,"PushAmount":45505,"StarsAmount":34072,"IssuesAmount":12395,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":13559,"PushAmount":55804,"StarsAmount":114042,"IssuesAmount":18164,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":11273,"PushAmount":26916,"StarsAmount":23687,"IssuesAmount":11635,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":6779,"PushAmount":37669,"StarsAmount":17702,"IssuesAmount":8184,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":5977,"PushAmount":39499,"StarsAmount":15216,"IssuesAmount":6628,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":5878,"PushAmount":30742,"StarsAmount":7326,"IssuesAmount":5322,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4792,"PushAmount":14525,"StarsAmount":11980,"IssuesAmount":3691,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4493,"PushAmount":17628,"StarsAmount":5323,"IssuesAmount":3303,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4363,"PushAmount":19075,"StarsAmount":5465,"IssuesAmount":3373,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":4001,"PushAmount":11343,"StarsAmount":2372,"IssuesAmount":2753,"PublicationsAmount":1}
+{"LanguageName":"OCaml","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":3775,"PushAmount":13611,"StarsAmount":4727,"IssuesAmount":3101,"PublicationsAmount":0}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":2817,"PushAmount":8185,"StarsAmount":677,"IssuesAmount":1008,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":2772,"PushAmount":15186,"StarsAmount":6098,"IssuesAmount":3977,"PublicationsAmount":0}
+{"LanguageName":"Dart","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":2194,"PushAmount":4892,"StarsAmount":1220,"IssuesAmount":1703,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1883,"PushAmount":12561,"StarsAmount":6142,"IssuesAmount":2493,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1590,"PushAmount":14927,"StarsAmount":2792,"IssuesAmount":1450,"PublicationsAmount":3}
+{"LanguageName":"F#","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1335,"PushAmount":6373,"StarsAmount":1872,"IssuesAmount":1319,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":1038,"PushAmount":161,"StarsAmount":206,"IssuesAmount":597,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":893,"PushAmount":4310,"StarsAmount":2635,"IssuesAmount":1094,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":529,"PushAmount":2957,"StarsAmount":927,"IssuesAmount":882,"PublicationsAmount":0}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":523,"PushAmount":4121,"StarsAmount":1429,"IssuesAmount":524,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":516,"PushAmount":2175,"StarsAmount":1596,"IssuesAmount":389,"PublicationsAmount":0}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":336,"PushAmount":1237,"StarsAmount":138,"IssuesAmount":196,"PublicationsAmount":0}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":295,"PushAmount":1646,"StarsAmount":169,"IssuesAmount":565,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":269,"PushAmount":891,"StarsAmount":142,"IssuesAmount":231,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":221,"PushAmount":1041,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":212,"PushAmount":3579,"StarsAmount":1466,"IssuesAmount":827,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":197,"PushAmount":1392,"StarsAmount":194,"IssuesAmount":144,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":197,"PushAmount":1263,"StarsAmount":254,"IssuesAmount":172,"PublicationsAmount":1}
+{"LanguageName":"Racket","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":186,"PushAmount":1354,"StarsAmount":252,"IssuesAmount":203,"PublicationsAmount":0}
+{"LanguageName":"Component Pascal","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":116,"PushAmount":429,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"JavaScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":422653,"PushAmount":1627909,"StarsAmount":1083797,"IssuesAmount":354470,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":264327,"PushAmount":1073692,"StarsAmount":455265,"IssuesAmount":192622,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":178148,"PushAmount":883417,"StarsAmount":436308,"IssuesAmount":195843,"PublicationsAmount":2}
+{"LanguageName":"PHP","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":115413,"PushAmount":514150,"StarsAmount":137511,"IssuesAmount":104572,"PublicationsAmount":1}
+{"LanguageName":"Ruby","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":113309,"PushAmount":271948,"StarsAmount":114171,"IssuesAmount":52950,"PublicationsAmount":0}
+{"LanguageName":"Go","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":102468,"PushAmount":284152,"StarsAmount":250662,"IssuesAmount":77793,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":98572,"PushAmount":529239,"StarsAmount":174990,"IssuesAmount":89957,"PublicationsAmount":0}
+{"LanguageName":"C#","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":66193,"PushAmount":485316,"StarsAmount":89488,"IssuesAmount":73647,"PublicationsAmount":0}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":57093,"PushAmount":177992,"StarsAmount":81656,"IssuesAmount":73380,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":51213,"PushAmount":305202,"StarsAmount":129340,"IssuesAmount":49965,"PublicationsAmount":265}
+{"LanguageName":"Scala","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":24444,"PushAmount":82459,"StarsAmount":22355,"IssuesAmount":14356,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":20560,"PushAmount":85365,"StarsAmount":151346,"IssuesAmount":19223,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":17723,"PushAmount":59220,"StarsAmount":33516,"IssuesAmount":13618,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":13980,"PushAmount":68469,"StarsAmount":112618,"IssuesAmount":17091,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":8910,"PushAmount":21465,"StarsAmount":19783,"IssuesAmount":10463,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":6678,"PushAmount":41459,"StarsAmount":16640,"IssuesAmount":7190,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":6533,"PushAmount":41365,"StarsAmount":16229,"IssuesAmount":9340,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":5707,"PushAmount":31925,"StarsAmount":6342,"IssuesAmount":4912,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":5541,"PushAmount":17752,"StarsAmount":10012,"IssuesAmount":4687,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":5385,"PushAmount":22656,"StarsAmount":7949,"IssuesAmount":3781,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4786,"PushAmount":22303,"StarsAmount":5711,"IssuesAmount":3839,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4608,"PushAmount":27989,"StarsAmount":17537,"IssuesAmount":5502,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4279,"PushAmount":11714,"StarsAmount":2393,"IssuesAmount":2450,"PublicationsAmount":1}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":4187,"PushAmount":12551,"StarsAmount":847,"IssuesAmount":1345,"PublicationsAmount":0}
+{"LanguageName":"OCaml","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":3822,"PushAmount":15052,"StarsAmount":5414,"IssuesAmount":2771,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":2315,"PushAmount":15752,"StarsAmount":6533,"IssuesAmount":3087,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":2176,"PushAmount":20993,"StarsAmount":3598,"IssuesAmount":1767,"PublicationsAmount":3}
+{"LanguageName":"Dart","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":2111,"PushAmount":6041,"StarsAmount":1263,"IssuesAmount":1442,"PublicationsAmount":0}
+{"LanguageName":"F#","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":1604,"PushAmount":6218,"StarsAmount":1685,"IssuesAmount":1665,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":1179,"PushAmount":5764,"StarsAmount":3398,"IssuesAmount":1112,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":1032,"PushAmount":6232,"StarsAmount":147,"IssuesAmount":633,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":814,"PushAmount":3233,"StarsAmount":1939,"IssuesAmount":699,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":693,"PushAmount":3730,"StarsAmount":710,"IssuesAmount":614,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":666,"PushAmount":4160,"StarsAmount":1781,"IssuesAmount":2000,"PublicationsAmount":0}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":405,"PushAmount":2180,"StarsAmount":159,"IssuesAmount":482,"PublicationsAmount":0}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":362,"PushAmount":4914,"StarsAmount":1473,"IssuesAmount":559,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":292,"PushAmount":1934,"StarsAmount":471,"IssuesAmount":234,"PublicationsAmount":1}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":219,"PushAmount":878,"StarsAmount":165,"IssuesAmount":102,"PublicationsAmount":0}
+{"LanguageName":"Racket","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":216,"PushAmount":2266,"StarsAmount":393,"IssuesAmount":221,"PublicationsAmount":0}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":120,"PushAmount":1709,"StarsAmount":626,"IssuesAmount":244,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":103,"PushAmount":1007,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":102,"PushAmount":1299,"StarsAmount":281,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"JavaScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":294029,"PushAmount":1044391,"StarsAmount":957893,"IssuesAmount":295326,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":207040,"PushAmount":648077,"StarsAmount":374534,"IssuesAmount":156513,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":133103,"PushAmount":512129,"StarsAmount":372886,"IssuesAmount":157680,"PublicationsAmount":2}
+{"LanguageName":"Ruby","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":91916,"PushAmount":184158,"StarsAmount":89830,"IssuesAmount":41048,"PublicationsAmount":0}
+{"LanguageName":"Go","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":90599,"PushAmount":185569,"StarsAmount":218061,"IssuesAmount":65991,"PublicationsAmount":1}
+{"LanguageName":"PHP","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":87687,"PushAmount":289324,"StarsAmount":125109,"IssuesAmount":85412,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":83184,"PushAmount":348685,"StarsAmount":165963,"IssuesAmount":80738,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":45938,"PushAmount":205403,"StarsAmount":118166,"IssuesAmount":44922,"PublicationsAmount":265}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":44131,"PushAmount":113325,"StarsAmount":78161,"IssuesAmount":62154,"PublicationsAmount":0}
+{"LanguageName":"C#","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":43188,"PushAmount":359590,"StarsAmount":81610,"IssuesAmount":56947,"PublicationsAmount":0}
+{"LanguageName":"Scala","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":20343,"PushAmount":60927,"StarsAmount":18821,"IssuesAmount":11891,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":14279,"PushAmount":40477,"StarsAmount":101258,"IssuesAmount":15284,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":14021,"PushAmount":34686,"StarsAmount":27704,"IssuesAmount":10895,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":10852,"PushAmount":34037,"StarsAmount":90851,"IssuesAmount":15350,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":6130,"PushAmount":12823,"StarsAmount":13983,"IssuesAmount":7320,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":5402,"PushAmount":23255,"StarsAmount":11256,"IssuesAmount":5682,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":5055,"PushAmount":13761,"StarsAmount":5155,"IssuesAmount":3362,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":5011,"PushAmount":24188,"StarsAmount":14991,"IssuesAmount":7314,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4964,"PushAmount":12615,"StarsAmount":6876,"IssuesAmount":3534,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4500,"PushAmount":9981,"StarsAmount":9113,"IssuesAmount":3562,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4407,"PushAmount":23369,"StarsAmount":5402,"IssuesAmount":3919,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":4106,"PushAmount":17270,"StarsAmount":14302,"IssuesAmount":5262,"PublicationsAmount":0}
+{"LanguageName":"OCaml","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":3256,"PushAmount":10314,"StarsAmount":5164,"IssuesAmount":2933,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":3115,"PushAmount":8070,"StarsAmount":1975,"IssuesAmount":2304,"PublicationsAmount":1}
+{"LanguageName":"Dart","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1973,"PushAmount":5428,"StarsAmount":706,"IssuesAmount":988,"PublicationsAmount":0}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1964,"PushAmount":5562,"StarsAmount":673,"IssuesAmount":1068,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1839,"PushAmount":10866,"StarsAmount":6023,"IssuesAmount":2605,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1453,"PushAmount":10505,"StarsAmount":3274,"IssuesAmount":1210,"PublicationsAmount":3}
+{"LanguageName":"F#","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":1370,"PushAmount":4023,"StarsAmount":1653,"IssuesAmount":1686,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":767,"PushAmount":2950,"StarsAmount":2363,"IssuesAmount":876,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":690,"PushAmount":4826,"StarsAmount":114,"IssuesAmount":599,"PublicationsAmount":0}
+{"LanguageName":"Perl 6","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":653,"PushAmount":3166,"StarsAmount":173,"IssuesAmount":652,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":502,"PushAmount":1417,"StarsAmount":1322,"IssuesAmount":456,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":499,"PushAmount":3068,"StarsAmount":1943,"IssuesAmount":1436,"PublicationsAmount":0}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":425,"PushAmount":1707,"StarsAmount":112,"IssuesAmount":347,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":351,"PushAmount":1686,"StarsAmount":703,"IssuesAmount":425,"PublicationsAmount":0}
+{"LanguageName":"Racket","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":298,"PushAmount":1422,"StarsAmount":298,"IssuesAmount":374,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":291,"PushAmount":1083,"StarsAmount":545,"IssuesAmount":234,"PublicationsAmount":1}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":217,"PushAmount":2578,"StarsAmount":1151,"IssuesAmount":384,"PublicationsAmount":0}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":178,"PushAmount":953,"StarsAmount":128,"IssuesAmount":129,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":129,"PushAmount":982,"StarsAmount":184,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"JavaScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":269903,"PushAmount":798657,"StarsAmount":897827,"IssuesAmount":257836,"PublicationsAmount":1}
+{"LanguageName":"Python","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":191596,"PushAmount":538498,"StarsAmount":387338,"IssuesAmount":147849,"PublicationsAmount":2}
+{"LanguageName":"Java","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":121744,"PushAmount":426210,"StarsAmount":338614,"IssuesAmount":143794,"PublicationsAmount":2}
+{"LanguageName":"Ruby","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":86499,"PushAmount":167115,"StarsAmount":84178,"IssuesAmount":35351,"PublicationsAmount":0}
+{"LanguageName":"PHP","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":84800,"PushAmount":241552,"StarsAmount":142193,"IssuesAmount":82034,"PublicationsAmount":1}
+{"LanguageName":"Go","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":82244,"PushAmount":142611,"StarsAmount":240569,"IssuesAmount":61354,"PublicationsAmount":1}
+{"LanguageName":"C++","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":80560,"PushAmount":306422,"StarsAmount":190321,"IssuesAmount":80443,"PublicationsAmount":0}
+{"LanguageName":"C","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":45143,"PushAmount":176918,"StarsAmount":122980,"IssuesAmount":44123,"PublicationsAmount":265}
+{"LanguageName":"C#","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":41241,"PushAmount":296169,"StarsAmount":83878,"IssuesAmount":56181,"PublicationsAmount":0}
+{"LanguageName":"TypeScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":40946,"PushAmount":89975,"StarsAmount":81851,"IssuesAmount":61393,"PublicationsAmount":0}
+{"LanguageName":"Scala","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":18150,"PushAmount":46768,"StarsAmount":19708,"IssuesAmount":9699,"PublicationsAmount":0}
+{"LanguageName":"Swift","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":13562,"PushAmount":34060,"StarsAmount":98039,"IssuesAmount":14329,"PublicationsAmount":0}
+{"LanguageName":"Rust","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":11911,"PushAmount":28105,"StarsAmount":32753,"IssuesAmount":9722,"PublicationsAmount":0}
+{"LanguageName":"Objective-C","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":10242,"PushAmount":28174,"StarsAmount":79622,"IssuesAmount":14254,"PublicationsAmount":0}
+{"LanguageName":"CoffeeScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":6445,"PushAmount":12777,"StarsAmount":13568,"IssuesAmount":6627,"PublicationsAmount":0}
+{"LanguageName":"Haskell","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4690,"PushAmount":17029,"StarsAmount":11518,"IssuesAmount":4941,"PublicationsAmount":0}
+{"LanguageName":"Groovy","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4670,"PushAmount":12632,"StarsAmount":5222,"IssuesAmount":3228,"PublicationsAmount":0}
+{"LanguageName":"Lua","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4637,"PushAmount":16629,"StarsAmount":12185,"IssuesAmount":5370,"PublicationsAmount":0}
+{"LanguageName":"Perl","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4429,"PushAmount":23279,"StarsAmount":5610,"IssuesAmount":3965,"PublicationsAmount":0}
+{"LanguageName":"Kotlin","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":4254,"PushAmount":16052,"StarsAmount":14546,"IssuesAmount":5463,"PublicationsAmount":0}
+{"LanguageName":"Elixir","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":3278,"PushAmount":5917,"StarsAmount":7493,"IssuesAmount":2129,"PublicationsAmount":0}
+{"LanguageName":"PowerShell","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2844,"PushAmount":8077,"StarsAmount":6887,"IssuesAmount":3124,"PublicationsAmount":0}
+{"LanguageName":"OCaml","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2630,"PushAmount":9671,"StarsAmount":5451,"IssuesAmount":2814,"PublicationsAmount":0}
+{"LanguageName":"Julia","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2507,"PushAmount":6178,"StarsAmount":2273,"IssuesAmount":1820,"PublicationsAmount":1}
+{"LanguageName":"Dart","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2286,"PushAmount":3879,"StarsAmount":837,"IssuesAmount":1291,"PublicationsAmount":0}
+{"LanguageName":"Emacs Lisp","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":2252,"PushAmount":11204,"StarsAmount":5659,"IssuesAmount":2663,"PublicationsAmount":0}
+{"LanguageName":"Visual Basic","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":1368,"PushAmount":3937,"StarsAmount":718,"IssuesAmount":818,"PublicationsAmount":0}
+{"LanguageName":"Matlab","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":1205,"PushAmount":7882,"StarsAmount":3271,"IssuesAmount":1162,"PublicationsAmount":3}
+{"LanguageName":"F#","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":1077,"PushAmount":3258,"StarsAmount":1439,"IssuesAmount":1165,"PublicationsAmount":0}
+{"LanguageName":"Crystal","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":743,"PushAmount":1318,"StarsAmount":1615,"IssuesAmount":539,"PublicationsAmount":0}
+{"LanguageName":"Fortran","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":729,"PushAmount":3119,"StarsAmount":123,"IssuesAmount":456,"PublicationsAmount":0}
+{"LanguageName":"Elm","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":533,"PushAmount":1677,"StarsAmount":2076,"IssuesAmount":548,"PublicationsAmount":0}
+{"LanguageName":"Perl 6","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":483,"PushAmount":2945,"StarsAmount":142,"IssuesAmount":558,"PublicationsAmount":0}
+{"LanguageName":"Vala","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":444,"PushAmount":2984,"StarsAmount":1791,"IssuesAmount":1348,"PublicationsAmount":0}
+{"LanguageName":"Common Lisp","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":387,"PushAmount":2550,"StarsAmount":1240,"IssuesAmount":408,"PublicationsAmount":0}
+{"LanguageName":"Haxe","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":339,"PushAmount":1442,"StarsAmount":715,"IssuesAmount":467,"PublicationsAmount":0}
+{"LanguageName":"Nim","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":304,"PushAmount":836,"StarsAmount":612,"IssuesAmount":236,"PublicationsAmount":1}
+{"LanguageName":"Smalltalk","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":284,"PushAmount":1683,"StarsAmount":128,"IssuesAmount":204,"PublicationsAmount":0}
+{"LanguageName":"Standard ML","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":157,"PushAmount":675,"StarsAmount":176,"IssuesAmount":182,"PublicationsAmount":0}
+{"LanguageName":"Racket","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":143,"PushAmount":702,"StarsAmount":369,"IssuesAmount":140,"PublicationsAmount":0}
+{"LanguageName":"Tcl","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":139,"PushAmount":652,"StarsAmount":161,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":119,"PushAmount":183,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1616,"StarsAmount":696,"IssuesAmount":238,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":987,"StarsAmount":363,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":219,"StarsAmount":310,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":424,"StarsAmount":305,"IssuesAmount":315,"PublicationsAmount":76}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":132,"StarsAmount":293,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1117,"StarsAmount":258,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Idris","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":132,"StarsAmount":105,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1873,"StarsAmount":470,"IssuesAmount":185,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":475,"StarsAmount":359,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":161,"StarsAmount":294,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":310,"StarsAmount":249,"IssuesAmount":119,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":653,"StarsAmount":245,"IssuesAmount":453,"PublicationsAmount":76}
+{"LanguageName":"Idris","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":311,"StarsAmount":177,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":406,"StarsAmount":1054,"IssuesAmount":373,"PublicationsAmount":76}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1170,"StarsAmount":536,"IssuesAmount":120,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":728,"StarsAmount":410,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":305,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":273,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":130,"StarsAmount":231,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Idris","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":241,"StarsAmount":199,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Verilog","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1089,"StarsAmount":630,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Awk","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":531,"StarsAmount":476,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"ActionScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":837,"StarsAmount":408,"IssuesAmount":135,"PublicationsAmount":0}
+{"LanguageName":"Red","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":177,"StarsAmount":361,"IssuesAmount":180,"PublicationsAmount":76}
+{"LanguageName":"LiveScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":329,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AppleScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":287,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"WebAssembly","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":275,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Idris","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":0,"StarsAmount":162,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1172,"StarsAmount":108,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":823,"StarsAmount":0,"IssuesAmount":605,"PublicationsAmount":0}
+{"LanguageName":"DIGITAL Command Language","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":465,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":375,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Pure Data","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":349,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":315,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ceylon","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":291,"StarsAmount":0,"IssuesAmount":116,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":270,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":259,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":257,"StarsAmount":0,"IssuesAmount":114,"PublicationsAmount":0}
+{"LanguageName":"X10","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":248,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":229,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Limbo","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":204,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"NetLogo","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":173,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Modelica","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":162,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"XQuery","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":153,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Agda","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":147,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":119,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Rebol","Year":2017,"Quarter":1,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":106,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1809,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":690,"StarsAmount":0,"IssuesAmount":377,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":605,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":515,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"DIGITAL Command Language","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":502,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":477,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":418,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ceylon","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":366,"StarsAmount":0,"IssuesAmount":125,"PublicationsAmount":0}
+{"LanguageName":"Pure Data","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":303,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"COBOL","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":285,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Limbo","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":242,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":226,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"X10","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":175,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Modelica","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":167,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"XQuery","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":158,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"APL","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":151,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"NetLogo","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":145,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":143,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Inform 7","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":142,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Agda","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":128,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":117,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Chapel","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":116,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Component Pascal","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":107,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Pike","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":103,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Io","Year":2017,"Quarter":2,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":101,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Ada","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":1059,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":688,"StarsAmount":0,"IssuesAmount":351,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":500,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Pure Data","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":436,"StarsAmount":0,"IssuesAmount":112,"PublicationsAmount":0}
+{"LanguageName":"Ceylon","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":342,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":286,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":283,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"XQuery","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":216,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":205,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"DIGITAL Command Language","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":198,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"WebAssembly","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":197,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":178,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Limbo","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":177,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Eiffel","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":139,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":130,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":128,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Inform 7","Year":2017,"Quarter":3,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":115,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"UnrealScript","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":491,"StarsAmount":0,"IssuesAmount":180,"PublicationsAmount":0}
+{"LanguageName":"Xtend","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":358,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Hack","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":232,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Objective-J","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":202,"StarsAmount":0,"IssuesAmount":134,"PublicationsAmount":0}
+{"LanguageName":"NetLogo","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":167,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Component Pascal","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":157,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"AMPL","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":140,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"SystemVerilog","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":134,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Squirrel","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":127,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"COBOL","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":118,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Arc","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":104,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Clean","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":103,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
+{"LanguageName":"Mercury","Year":2017,"Quarter":4,"PopularitySurvey":0,"PullRequestsAmount":0,"PushAmount":100,"StarsAmount":0,"IssuesAmount":0,"PublicationsAmount":0}
